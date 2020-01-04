@@ -5,6 +5,7 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.671);
     margin-top: 20px;
+    z-index: 100;
 }
 
 .es_nav_logo
