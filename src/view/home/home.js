@@ -12,6 +12,10 @@ import LOL from "../images/home/lol.jpg";
 // Components
 import GameCard from "./gameCard";
 
+// controllers
+import Matches from "../../Controller/matches.js";
+import Game from "../../Controller/Game.js";
+
 class Home extends Component {
   constructor() {
     super();
@@ -23,6 +27,40 @@ class Home extends Component {
   }
 
   render() {
+    const _upCommingMatches = Matches.getUpcommingMatches();
+
+    const upCommingMatches = _upCommingMatches.map((data, i) => {
+      return (
+        <tr>
+          <td>
+            <img
+              alt=""
+              src={Game.getLogoByID(data.videogame.id)}
+              // height="30px"
+              width="25px"
+            ></img>
+            &nbsp;&nbsp;&nbsp;{data.videogame.name}
+          </td>
+          <td>
+            <img
+              alt=""
+              src={
+                data.league.image_url ||
+                "https://bandat-nhontrach.com/images600_/logo-placeholder-3.png"
+              }
+              // height="30px"
+              width="50px"
+            ></img>
+            &nbsp;&nbsp;&nbsp;
+            {data.league.slug}
+          </td>
+          <td>{data.serie.full_name}</td>
+          <td>{data.name}</td>
+          <td>{data.begin_at.split("T")[0]}</td>
+          <td>{data.begin_at.split("T")[1].substring(0, 5)}</td>
+        </tr>
+      );
+    });
     return (
       <div className="container-fluid">
         <div className="container home_header">
@@ -38,6 +76,7 @@ class Home extends Component {
           </center>
         </div>
 
+        {/* Games */}
         <div className="container home_container row">
           <div className="col-sm-12">
             <h2>Games</h2>
@@ -55,11 +94,27 @@ class Home extends Component {
         </div>
 
         {/* Upcomming Leagus */}
-        <div className="container home_container row">
+        <div className="container home_container row home_upcomming_matches">
           <div className="col-sm-12">
-            <h2>Upcoming Leagues</h2>
+            <h2>Upcoming Matches</h2>
 
             <hr />
+
+            <div className="tableContainer">
+              <table width="100%">
+                <thead>
+                  <tr>
+                    <th>Game</th>
+                    <th>League</th>
+                    <th>Series</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>{upCommingMatches}</tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
