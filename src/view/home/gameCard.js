@@ -10,7 +10,7 @@ class gameCard extends Component {
 
   render() {
     return (
-      <div className="col-md-6">
+      <div className="col-md-4">
         <div
           className="home_game_card"
           style={{ backgroundImage: 'url("' + this.props.img + '")' }}

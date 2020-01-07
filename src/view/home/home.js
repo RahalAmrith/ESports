@@ -63,6 +63,17 @@ class Home extends Component {
     });
     return (
       <div className="container-fluid">
+        {/* Games */}
+        <div className="container home_container row">
+          <GameCard img={LOL} title="LOL" />
+          <GameCard img={DOTA2} title="DOTA 2" />
+          <GameCard img={OverWatch} title="OVERWATCH" />
+          <div className="col-sm-2"></div>
+          <GameCard img={CSGO} title="CS:GO" />
+          <GameCard img={PUBG} title="pubg" />
+          <div className="col-sm-2"></div>
+        </div>
+
         <div className="container home_header">
           <center>
             <h1>Welcome to eSports </h1>
@@ -74,23 +85,6 @@ class Home extends Component {
               individually or as teams.
             </p>
           </center>
-        </div>
-
-        {/* Games */}
-        <div className="container home_container row">
-          <div className="col-sm-12">
-            <h2>Games</h2>
-
-            <hr />
-          </div>
-
-          <GameCard img={LOL} title="LOL" />
-          <GameCard img={DOTA2} title="DOTA 2" />
-          <GameCard img={OverWatch} title="OVERWATCH" />
-          <GameCard img={CSGO} title="CS:GO" />
-          <div className="col-sm-3"></div>
-          <GameCard img={PUBG} title="pubg" />
-          <div className="col-sm-3"></div>
         </div>
 
         {/* Upcomming Leagus */}
