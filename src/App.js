@@ -7,6 +7,7 @@ import "./App.css";
 // views
 import NawBar from "./view/common/navbar.js";
 import Home from "./view/home/home";
+import Footer from './view/common/footer.js'
 
 class App extends Component {
   constructor() {
@@ -34,6 +35,8 @@ class App extends Component {
             />
           </Switch>
         </Router>
+
+        <Footer />
       </div>
     );
   }

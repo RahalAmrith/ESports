@@ -1,0 +1,43 @@
+.es_home_PostCard {
+  /* width: 33.33%; */
+  height: 350px;
+  background-color: #000000aa;
+  margin: 15px;
+  border-radius: 5px;
+  padding: 8px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.es_home_PostCard:hover{
+  box-shadow: 0px 0px 10px 5px #FFFFFF22;
+}
+
+.es_h_pc_img {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  margin-bottom: 15px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.es_home_PostCard h3 {
+  margin-bottom: 15px;
+}
+
+.es_home_PostCard p {
+  height: 70px;
+  font-size: 12px;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.es_home_PostCard button {
+  border: none;
+  background-color: #2E4A59;
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 2px;
+}

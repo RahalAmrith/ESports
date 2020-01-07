@@ -27,25 +27,12 @@
   padding: 0px;
 }
 
+.home_container h1 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
 .home_container hr {
+  margin-top: 8px;
   border-color: #ffffff;
-}
-
-.home_upcomming_matches .tableContainer{
-  overflow-x: scroll;
-}
-
-.home_upcomming_matches tr {
-  height: 60px;
-  background-color: #00000088;
-  border-bottom: 1px solid #FFFFFF22;
-}
-
-.home_upcomming_matches th{
-  text-align: center;
-}
-
-.home_upcomming_matches td{
-  padding: 0px 8px;
-  border-right: 1px solid #FFFFFF22;
 }

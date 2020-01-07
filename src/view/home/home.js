@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Slider from "react-slick";
 
 import "../assets/home/home.css";
 
@@ -10,7 +11,8 @@ import OverWatch from "../images/home/overwatch.jpg";
 import LOL from "../images/home/lol.jpg";
 
 // Components
-import GameCard from "./gameCard";
+import GameCard from "./gameCard.js";
+import PostCard from "./postCard.js";
 
 // controllers
 import Matches from "../../Controller/matches.js";
@@ -20,46 +22,102 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {};
-  }
 
-  getBackground(img) {
-    "";
+    this.postData = [
+      {
+        img:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
+        title: "Post Title 01",
+        desc:
+          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
+        link:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
+      },
+      {
+        img:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
+        title: "Post Title 02",
+        desc:
+          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
+        link:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
+      },
+      {
+        img:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
+        title: "Post Title 03",
+        desc:
+          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
+        link:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
+      },
+      {
+        img:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
+        title: "Post Title 04",
+        desc:
+          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
+        link:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
+      },
+      {
+        img:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
+        title: "Post Title 05",
+        desc:
+          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
+        link:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
+      },
+      {
+        img:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
+        title: "Post Title 06",
+        desc:
+          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
+        link:
+          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
+      }
+    ];
   }
 
   render() {
-    const _upCommingMatches = Matches.getUpcommingMatches();
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
 
-    const upCommingMatches = _upCommingMatches.map((data, i) => {
-      return (
-        <tr>
-          <td>
-            <img
-              alt=""
-              src={Game.getLogoByID(data.videogame.id)}
-              // height="30px"
-              width="25px"
-            ></img>
-            &nbsp;&nbsp;&nbsp;{data.videogame.name}
-          </td>
-          <td>
-            <img
-              alt=""
-              src={
-                data.league.image_url ||
-                "https://bandat-nhontrach.com/images600_/logo-placeholder-3.png"
-              }
-              // height="30px"
-              width="50px"
-            ></img>
-            &nbsp;&nbsp;&nbsp;
-            {data.league.slug}
-          </td>
-          <td>{data.serie.full_name}</td>
-          <td>{data.name}</td>
-          <td>{data.begin_at.split("T")[0]}</td>
-          <td>{data.begin_at.split("T")[1].substring(0, 5)}</td>
-        </tr>
-      );
+    const _posts = this.postData.map((data, i) => {
+      return <PostCard key={i} data={data} />;
     });
     return (
       <div className="container-fluid">
@@ -88,28 +146,10 @@ class Home extends Component {
         </div>
 
         {/* Upcomming Leagus */}
-        <div className="container home_container row home_upcomming_matches">
-          <div className="col-sm-12">
-            <h2>Upcoming Matches</h2>
-
-            <hr />
-
-            <div className="tableContainer">
-              <table width="100%">
-                <thead>
-                  <tr>
-                    <th>Game</th>
-                    <th>League</th>
-                    <th>Series</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                  </tr>
-                </thead>
-                <tbody>{upCommingMatches}</tbody>
-              </table>
-            </div>
-          </div>
+        <div className="container home_container">
+          <h1>Recent Posts</h1>
+          <hr />
+          <Slider {...settings}>{_posts}</Slider>
         </div>
       </div>
     );
