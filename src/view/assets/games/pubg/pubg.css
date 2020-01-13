@@ -1,0 +1,45 @@
+.pubg_banner {
+  height: 250px;
+  background-color: #00000088;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  background-size: cover;
+  box-shadow: 2px 2px 5px #00000088;
+}
+
+.pubg_navbar {
+  height: 50px;
+  background-color: #00000088;
+  margin-bottom: 25px;
+  display: flex;
+  border-radius: 8px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.pubg_navbar ul {
+  width: 100%;
+  display: flex;
+  color: #ffffff;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  height: 100%;
+  line-height: 50px;
+}
+
+.pubg_navbar ul li {
+  width: 100%;
+  text-align: center;
+  border-left: solid 1px #ffffff22;
+  border-right: solid 1px #ffffff22;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.pubg_navbar ul li:hover{
+    background-color: #000000aa;
+    color: #3498db;
+    font-size: 18px;
+}

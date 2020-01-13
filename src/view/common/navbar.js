@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "../assets/common/navbar.css";
 
@@ -32,9 +33,9 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -78,9 +79,9 @@ class NavBar extends Component {
                   <a className="dropdown-item" href="#">
                     CS:GO
                   </a>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/games/pubg">
                     PUBG
-                  </a>
+                  </Link>
                 </div>
               </li>
             </ul>

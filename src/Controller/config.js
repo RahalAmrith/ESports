@@ -2,6 +2,10 @@ class Env{
     constructor(){
         
     }
+
+    getCSSImage(img){
+        return `url(${img})`
+    }
 }
 
 
