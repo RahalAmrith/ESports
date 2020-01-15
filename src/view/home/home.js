@@ -15,8 +15,8 @@ import GameCard from "./gameCard.js";
 import PostCard from "./postCard.js";
 
 // controllers
-import Matches from "../../Controller/matches.js";
-import Game from "../../Controller/Game.js";
+// import Matches from "../../Controller/matches.js";
+// import Game from "../../Controller/Game.js";
 
 class Home extends Component {
   constructor() {

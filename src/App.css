@@ -13,3 +13,8 @@ body {
 .App {
   padding-top: 100px;
 }
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
