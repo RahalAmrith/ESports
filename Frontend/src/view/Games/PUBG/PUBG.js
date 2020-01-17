@@ -13,6 +13,7 @@ import BannerImg from "../../images/home/pubg.jpg";
 import LeaguesContainer from "../LeaguesContainer.js";
 import MatchesContainer from "../MatchesContainer.js";
 import PlayersContainer from "../PlayersContainer.js";
+import TeamsContainer from "../TeamsContainer.js";
 
 import "../../assets/games/pubg/pubg.css";
 
@@ -23,7 +24,8 @@ class PUBG extends Component {
       page: "leagues",
       leaguesList: [],
       matchesList: [],
-      playersList: []
+      playersList: [],
+      teamsList: []
     };
   }
 
@@ -31,23 +33,35 @@ class PUBG extends Component {
     var _leaguesList = [];
     var _matchesList = [];
     var _playersList = [];
+    var _teamsList = [];
 
     // get leagues list
     _leaguesList = await _PUBG.getleagues();
     this.setState({
       leaguesList: _leaguesList
     });
-    
+
     // get matches list
     _matchesList = await _PUBG.getMatches();
     this.setState({
       matchesList: _matchesList
     });
+    console.log(_matchesList);
+    
 
     // get Players list
     _playersList = await _PUBG.getPlayers();
     this.setState({
       playersList: _playersList
+    });
+
+    console.log();
+    
+
+    // get Teams list
+    _teamsList = await _PUBG.getTeams();
+    this.setState({
+      teamsList: _teamsList
     });
 
     console.log(this.state);
@@ -77,16 +91,10 @@ class PUBG extends Component {
               Leagues
             </li>
             <li
-              onClick={() => this.setPage("matches")}
-              className={this.state.page === "matches" ? "active" : null}
+              onClick={() => this.setPage("tournments")}
+              className={this.state.page === "tournments" ? "active" : null}
             >
-              Matches
-            </li>
-            <li
-              onClick={() => this.setPage("players")}
-              className={this.state.page === "players" ? "active" : null}
-            >
-              Players
+              Tournaments
             </li>
             <li
               onClick={() => this.setPage("teams")}
@@ -95,10 +103,10 @@ class PUBG extends Component {
               Teams
             </li>
             <li
-              onClick={() => this.setPage("tournments")}
-              className={this.state.page === "tournments" ? "active" : null}
+              onClick={() => this.setPage("players")}
+              className={this.state.page === "players" ? "active" : null}
             >
-              Tournaments
+              Players
             </li>
           </ul>
         </div>
@@ -111,13 +119,13 @@ class PUBG extends Component {
           }
           data={this.state.leaguesList}
         />
-        <MatchesContainer
+        <TeamsContainer
           style={
-            this.state.page === "matches"
+            this.state.page === "teams"
               ? { transform: "rotateY(0deg)", opacity: 1, maxHeight: "1000vh" }
               : { transform: "rotateY(90deg)", opacity: 0, maxHeight: "0px" }
           }
-          data={this.state.matchesList}
+          data={this.state.teamsList}
         />
         <PlayersContainer
           style={

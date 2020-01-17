@@ -25,7 +25,9 @@
   width: 50px;
   height: 50px;
   object-fit: contain;
-  background-color: #ffffff55;
+  background-color: #ffffff22;
   border-radius: 50%;
   overflow: hidden;
+  border: none;
+  outline: none;
 }

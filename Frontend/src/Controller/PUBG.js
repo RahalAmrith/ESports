@@ -5,7 +5,8 @@ class PUBG {
     this.apis = {
       listLeagues: "/pubg/leagues",
       listMatches: "/pubg/matches",
-      listplayers: "/pubg/players"
+      listplayers: "/pubg/players",
+      listTeams: "/pubg/teams"
     };
   }
 
@@ -31,6 +32,14 @@ class PUBG {
     _playersList = await Config.callAPI(this.apis.listplayers);
 
     return _playersList;
+  }
+
+  async getTeams() {
+    var _teamsList = [];
+
+    _teamsList = await Config.callAPI(this.apis.listTeams);
+
+    return _teamsList;
   }
 }
 

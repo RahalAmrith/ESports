@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../assets/games/matchesContainer.css";
 
-class PlayersContainer extends Component {
+class TeamsContainer extends Component {
   constructor() {
     super();
     this.state = {};
@@ -16,10 +16,8 @@ class PlayersContainer extends Component {
             <img alt="" src={data.image_url} />
           </th>
           <td>{data.name}</td>
-          <td>{data.slug}</td>
-          <td>{data.nationality}</td>
-          <td>{data.current_team === null ? "N/A" : data.current_team.slug}</td>
-          <td>{data.role}</td>
+          <td>{data.acronym}</td>
+          <td>{data.location}</td>
         </tr>
       );
     });
@@ -30,10 +28,8 @@ class PlayersContainer extends Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
-              <th scope="col">Slug</th>
+              <th scope="col">Acronym</th>
               <th scope="col">Country</th>
-              <th scope="col">Team</th>
-              <th scope="col">Role</th>
             </tr>
           </thead>
           <tbody>{_matchesList}</tbody>
@@ -43,4 +39,4 @@ class PlayersContainer extends Component {
   }
 }
 
-export default PlayersContainer;
+export default TeamsContainer;
