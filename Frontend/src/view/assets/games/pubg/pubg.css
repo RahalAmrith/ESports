@@ -8,6 +8,23 @@
   background-position: center;
 }
 
+.pubg_desc {
+  background-color: #00000055;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.pubg_desc p {
+  text-align: justify;
+}
+
+.pubg_desc ul {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 .pubg_navbar {
   height: 50px;
   background-color: #00000088;

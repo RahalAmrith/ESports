@@ -1,15 +1,33 @@
 import React, { Component } from "react";
+import Pagination from "react-js-pagination";
 
 import "../assets/games/matchesContainer.css";
 
 class MatchesContainer extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      pageNum: 1
+    };
+  }
+
+  handlePaging(pgno) {
+    this.setState({
+      pageNum: pgno
+    });
   }
 
   render() {
-    var _matchesList = this.props.data.slice(0, 10).map((data, i) => {
+    var resCount = this.props.data.length;
+    var pageCount = Math.ceil(resCount / 10);
+    var floor = (this.state.pageNum - 1) * 10;
+    var ceil = this.state.pageNum * 10 - 1;
+
+    if (ceil > resCount - 1) {
+      ceil = resCount - 1;
+    }
+
+    var _matchesList = this.props.data.slice(floor, ceil + 1).map((data, i) => {
       return (
         <tr key={i}>
           <th scope="row">
@@ -19,7 +37,13 @@ class MatchesContainer extends Component {
           <td>{data.tournament.name}</td>
           <td>{data.name}</td>
           <td>{data.match_type}</td>
-          <td>{data.status}</td>
+          <td>
+            {data.winner_id === this.props.teamID ? (
+              <span style={{ color: "#00FF00" }}>Won</span>
+            ) : (
+              data.status
+            )}
+          </td>
         </tr>
       );
     });
@@ -38,6 +62,23 @@ class MatchesContainer extends Component {
           </thead>
           <tbody>{_matchesList}</tbody>
         </table>
+
+        <div className="pagination">
+          <center>
+            {/* <div> */}
+            <Pagination
+              activePage={this.state.pageNum}
+              itemsCountPerPage={10}
+              totalItemsCount={pageCount * 10}
+              pageRangeDisplayed={window.innerWidth < 768 ? 5 : 10}
+              itemClass="page-item"
+              linkClass="page-link"
+              innerClass="pagination_bar"
+              onChange={pgno => this.handlePaging(pgno)}
+            />
+            {/* </div> */}
+          </center>
+        </div>
       </div>
     );
   }

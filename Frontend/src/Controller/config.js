@@ -1,4 +1,5 @@
 import Axios from "axios";
+import qs from "query-string";
 
 class Env {
   constructor() {
@@ -26,13 +27,23 @@ class Env {
     };
   }
 
-  async callAPI(uri) {
+  async callAPI(uri, params) {
     var _response = [];
     var requestBody = {
       apiuri: uri
+      // params : qs.stringifyUrl(params)
     };
 
-    await Axios.post(`${this.host}${this.port}${this.api.pandascore}`, requestBody)
+    if (params !== null && params !== undefined) {
+      if (Object.keys(params).length > 0) {
+        requestBody.params = qs.stringify(params);
+      }
+    }
+
+    await Axios.post(
+      `${this.host}${this.port}${this.api.pandascore}`,
+      requestBody
+    )
       .then(async response => {
         _response = response.data;
       })

@@ -1,24 +1,52 @@
 import React, { Component } from "react";
+import Pagination from "react-js-pagination";
+
+import { Link } from "react-router-dom";
 
 import "../assets/games/matchesContainer.css";
+
+// placeholders
+import TeamPlaceholder from "../images/placeholders/team.png";
 
 class TeamsContainer extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      pageNum: 1
+    };
+  }
+
+  handlePaging(pgno) {
+    this.setState({
+      pageNum: pgno
+    });
   }
 
   render() {
-    var _matchesList = this.props.data.map((data, i) => {
+    var resCount = this.props.data.length;
+    var pageCount = Math.ceil(resCount / 10);
+    var floor = (this.state.pageNum - 1) * 10;
+    var ceil = this.state.pageNum * 10 - 1;
+
+    if (ceil > resCount - 1) {
+      ceil = resCount - 1;
+    }
+
+    var _matchesList = this.props.data.slice(floor, ceil + 1).map((data, i) => {
       return (
-        <tr key={i}>
-          <th scope="row">
-            <img alt="" src={data.image_url} />
-          </th>
-          <td>{data.name}</td>
-          <td>{data.acronym}</td>
-          <td>{data.location}</td>
-        </tr>
+        <Link  key={i} to={"/team/" + data.id}>
+          {/* <tr key={i}> */}
+            <th scope="row">
+              <img
+                alt=""
+                src={data.image_url === null ? TeamPlaceholder : data.image_url}
+              />
+            </th>
+            <td>{data.name}</td>
+            <td>{data.acronym || "-"}</td>
+            <td>{data.location || "-"}</td>
+          {/* </tr> */}
+        </Link>
       );
     });
     return (
@@ -34,6 +62,23 @@ class TeamsContainer extends Component {
           </thead>
           <tbody>{_matchesList}</tbody>
         </table>
+
+        <div className="pagination">
+          <center>
+            {/* <div> */}
+            <Pagination
+              activePage={this.state.pageNum}
+              itemsCountPerPage={10}
+              totalItemsCount={pageCount * 10}
+              pageRangeDisplayed={window.innerWidth < 768 ? 5 : 10}
+              itemClass="page-item"
+              linkClass="page-link"
+              innerClass="pagination_bar"
+              onChange={pgno => this.handlePaging(pgno)}
+            />
+            {/* </div> */}
+          </center>
+        </div>
       </div>
     );
   }

@@ -11,11 +11,11 @@ import BannerImg from "../../images/home/pubg.jpg";
 
 // views
 import LeaguesContainer from "../LeaguesContainer.js";
-import MatchesContainer from "../MatchesContainer.js";
 import PlayersContainer from "../PlayersContainer.js";
 import TeamsContainer from "../TeamsContainer.js";
 
 import "../../assets/games/pubg/pubg.css";
+
 
 class PUBG extends Component {
   constructor() {
@@ -23,7 +23,7 @@ class PUBG extends Component {
     this.state = {
       page: "leagues",
       leaguesList: [],
-      matchesList: [],
+      tournamentsList: [],
       playersList: [],
       teamsList: []
     };
@@ -31,7 +31,6 @@ class PUBG extends Component {
 
   async UNSAFE_componentWillMount() {
     var _leaguesList = [];
-    var _matchesList = [];
     var _playersList = [];
     var _teamsList = [];
 
@@ -41,30 +40,17 @@ class PUBG extends Component {
       leaguesList: _leaguesList
     });
 
-    // get matches list
-    _matchesList = await _PUBG.getMatches();
-    this.setState({
-      matchesList: _matchesList
-    });
-    console.log(_matchesList);
-    
-
-    // get Players list
-    _playersList = await _PUBG.getPlayers();
-    this.setState({
-      playersList: _playersList
-    });
-
-    console.log();
-    
-
     // get Teams list
     _teamsList = await _PUBG.getTeams();
     this.setState({
       teamsList: _teamsList
     });
 
-    console.log(this.state);
+    // get Players list
+    _playersList = await _PUBG.getPlayers();
+    this.setState({
+      playersList: _playersList
+    });
   }
 
   setPage(_page) {
@@ -81,6 +67,52 @@ class PUBG extends Component {
           style={{ backgroundImage: Config.getCSSImage(BannerImg) }}
         ></div>
 
+        <div className="container pubg_desc">
+          <p>
+            PlayerUnknown's Battlegrounds (PUBG) is an online multiplayer battle
+            royale game developed and published by PUBG Corporation, a
+            subsidiary of South Korean video game company Bluehole. The game is
+            based on previous mods that were created by Brendan "PlayerUnknown"
+            Greene for other games, inspired by the 2000 Japanese film Battle
+            Royale, and expanded into a standalone game under Greene's creative
+            direction. In the game, up to one hundred players parachute onto an
+            island and scavenge for weapons and equipment to kill others while
+            avoiding getting killed themselves. The available safe area of the
+            game's map decreases in size over time, directing surviving players
+            into tighter areas to force encounters. The last player or team
+            standing wins the round.
+          </p>
+
+          <ul>
+            <li>
+              {" "}
+              <b>Initial release date: </b> March 23, 2017
+            </li>
+            <li>
+              {" "}
+              <b>Designer: </b> Brendan Greene
+            </li>
+            <li>
+              {" "}
+              <b>Composer: </b> Tom Salta
+            </li>
+            <li>
+              {" "}
+              <b>Composer: </b> Tom Salta
+            </li>
+            <li>
+              {" "}
+              <b>Developers: </b> PUBG Corporation, Krafton, Xbox Game Studios,
+              Tencent Games
+            </li>
+            <li>
+              {" "}
+              <b>Publishers: </b> Krafton, Lightspeed, Quantum, Xbox Game
+              Studios, Kakao Games
+            </li>
+          </ul>
+        </div>
+
         {/* pubg nav bar */}
         <div className="container pubg_navbar">
           <ul>
@@ -89,12 +121,6 @@ class PUBG extends Component {
               className={this.state.page === "leagues" ? "active" : null}
             >
               Leagues
-            </li>
-            <li
-              onClick={() => this.setPage("tournments")}
-              className={this.state.page === "tournments" ? "active" : null}
-            >
-              Tournaments
             </li>
             <li
               onClick={() => this.setPage("teams")}

@@ -11,13 +11,22 @@
   color: #ffffff;
 }
 
-.MatchesContainer table tr {
+.MatchesContainer table a {
+  display: table-row;
+  color: #ffffff;
+}
+
+.MatchesContainer table a:hover {
+  text-decoration: none;
+}
+
+.MatchesContainer table a {
   background-color: #00000022;
   cursor: pointer;
   line-height: 50px;
 }
 
-.MatchesContainer table tr:hover {
+.MatchesContainer table a:hover {
   background-color: #00000088;
 }
 
@@ -30,4 +39,53 @@
   overflow: hidden;
   border: none;
   outline: none;
+}
+
+.pagination {
+  padding: 30px 0px;
+  /* max-width: 678px; */
+  width: 100%;
+  align-items: center;
+  display: block;
+}
+
+.pagination_bar {
+  list-style: none;
+  padding-left: 0px !important;
+  width: 100%;
+}
+
+.pagination_bar li {
+  display: inline-block;
+}
+
+.pagination_bar li a {
+  display: inline-block;
+  color: #ffffff !important;
+  background-color: #00000055;
+  border: none;
+  margin: 2px;
+}
+
+.pagination_bar li a:hover {
+  background-color: #00000099;
+  box-shadow: none;
+}
+
+.pagination_bar li a:focus {
+  background-color: #00000099;
+  box-shadow: none;
+}
+
+.pagination_bar .active a {
+  background-color: #000000aa !important;
+
+  color: #588dff !important;
+}
+
+.pagination_bar .disabled a {
+  background-color: #00000022 !important;
+  color: #ffffff88 !important;
+  cursor: no-drop;
+  opacity: 0.3;
 }

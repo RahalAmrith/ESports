@@ -9,6 +9,7 @@ import NawBar from "./view/common/navbar.js";
 import Home from "./view/home/home";
 import Footer from "./view/common/footer.js";
 import PUBG from "./view/Games/PUBG/PUBG.js";
+import Team from "./view/Team/Team.js";
 
 class App extends Component {
   constructor() {
@@ -39,6 +40,13 @@ class App extends Component {
               strict
               // component={Landing}
               render={props => <PUBG {...props} />}
+            />
+            <Route
+              path="/team/:id"
+              exact
+              strict
+              // component={Landing}
+              render={props => <Team {...props} />}
             />
           </Switch>
           <Footer />

@@ -1,0 +1,64 @@
+.Team_banner {
+  background-color: #00000055;
+  /* height: 230px; */
+  margin-bottom: 25px;
+  display: flex;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.Team_logo {
+  border-right: solid 1px #ffffff;
+}
+
+.Team_logo img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.Team_details {
+    padding-top: 20px;
+  padding-left: 25px;
+  color: #ffffff;
+}
+
+.Team_details ul {
+  list-style: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding-left: 0px;
+}
+
+.Team_players{
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.Team_players hr{
+    border-color: #ffffff;
+}
+
+.PlayerCard{
+    background-color: #00000055;
+    text-align: center;
+    padding: 15px 5px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    min-height: 325px;
+}
+
+.PlayerCard img{
+   width: calc(80% - 10px);
+   border-radius: 50%;
+   margin-bottom: 15px;
+   background-color: #FFFFFF22;
+}
+
+.PlayerCard h6{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.PlayerCard h5{
+    color: royalblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
