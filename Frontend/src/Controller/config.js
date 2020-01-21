@@ -27,6 +27,11 @@ class Env {
     };
   }
 
+  getHost() {
+    var host = window.location.hostname;
+    return "http://" + host;
+  }
+
   async callAPI(uri, params) {
     var _response = [];
     var requestBody = {
@@ -41,7 +46,7 @@ class Env {
     }
 
     await Axios.post(
-      `${this.host}${this.port}${this.api.pandascore}`,
+      `${this.getHost()}${this.port}${this.api.pandascore}`,
       requestBody
     )
       .then(async response => {

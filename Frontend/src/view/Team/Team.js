@@ -68,20 +68,24 @@ class Team extends Component {
   }
 
   render() {
-    var playersList = this.state.players.map((data, i) => {
-      return (
-        <div className="col-6 col-md-4 col-lg-3">
-          <div className="PlayerCard">
-            <img
-              src={data.image_url === null ? PlayerPlaceholder : data.image_url}
-            ></img>
-            <h4>{data.name}</h4>
-            <h6>{(data.first_name || "") + " " + (data.last_name || "")}</h6>
-            <h5>Role : {data.role || "N/A"}</h5>
+    if (this.state.players !== undefined) {
+      var playersList = this.state.players.map((data, i) => {
+        return (
+          <div className="col-6 col-md-4 col-lg-3">
+            <div className="PlayerCard">
+              <img
+                src={
+                  data.image_url === null ? PlayerPlaceholder : data.image_url
+                }
+              ></img>
+              <h4>{data.name}</h4>
+              <h6>{(data.first_name || "") + " " + (data.last_name || "")}</h6>
+              <h5>Role : {data.role || "N/A"}</h5>
+            </div>
           </div>
-        </div>
-      );
-    });
+        );
+      });
+    }
     return (
       <div className="container-fluid">
         <div className="container row Team_banner">

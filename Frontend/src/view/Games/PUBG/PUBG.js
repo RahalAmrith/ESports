@@ -16,7 +16,6 @@ import TeamsContainer from "../TeamsContainer.js";
 
 import "../../assets/games/pubg/pubg.css";
 
-
 class PUBG extends Component {
   constructor() {
     super();
@@ -39,6 +38,8 @@ class PUBG extends Component {
     this.setState({
       leaguesList: _leaguesList
     });
+
+    console.log(_leaguesList);
 
     // get Teams list
     _teamsList = await _PUBG.getTeams();
