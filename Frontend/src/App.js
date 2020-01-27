@@ -9,7 +9,11 @@ import NawBar from "./view/common/navbar.js";
 import Home from "./view/home/home";
 import Footer from "./view/common/footer.js";
 import PUBG from "./view/Games/PUBG/PUBG.js";
+import LOL from "./view/Games/LOL/LOL.js";
+import DOTA2 from "./view/Games/DOTA2/DOTA2.js";
+import Overwatch from "./view/Games/Overwatch/Overwatch.js";
 import Team from "./view/Team/Team.js";
+import _LOL from "./Controller/LOL";
 
 class App extends Component {
   constructor() {
@@ -40,6 +44,27 @@ class App extends Component {
               strict
               // component={Landing}
               render={props => <PUBG {...props} />}
+            />
+            <Route
+              path="/games/lol"
+              exact
+              strict
+              // component={Landing}
+              render={props => <LOL {...props} />}
+            />
+            <Route
+              path="/games/dota2"
+              exact
+              strict
+              // component={Landing}
+              render={props => <DOTA2 {...props} />}
+            />
+            <Route
+              path="/games/overwatch"
+              exact
+              strict
+              // component={Landing}
+              render={props => <Overwatch {...props} />}
             />
             <Route
               path="/team/:id"

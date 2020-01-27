@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
+
 import "../assets/home/gameCard.css";
 
 class gameCard extends Component {
@@ -11,14 +13,16 @@ class gameCard extends Component {
   render() {
     return (
       <div className="col-md-4">
-        <div
-          className="home_game_card"
-          style={{ backgroundImage: 'url("' + this.props.img + '")' }}
-        >
-          <div className="home_game_card_content">
-            <h1>{this.props.title}</h1>
+        <Link to={this.props.link}>
+          <div
+            className="home_game_card"
+            style={{ backgroundImage: 'url("' + this.props.img + '")' }}
+          >
+            <div className="home_game_card_content">
+              <h1>{this.props.title}</h1>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }

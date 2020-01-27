@@ -5,10 +5,8 @@
   background-position: center;
 }
 
-
-
-.home_game_card:hover{
-    box-shadow: 0px 0px 5px #FFFFFF33;
+.home_game_card:hover {
+  box-shadow: 0px 0px 5px #ffffff33;
 }
 
 .home_game_card_content {
@@ -31,6 +29,13 @@
   margin-top: -200px;
   transition-duration: 0.3s;
   font-size: 50px;
+  text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.home_game_card_content h1:hover {
+  text-decoration: none !important;
 }
 
 .home_game_card_content:hover h1 {

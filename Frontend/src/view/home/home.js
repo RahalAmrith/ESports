@@ -13,15 +13,19 @@ import LOL from "../images/home/lol.jpg";
 // Components
 import GameCard from "./gameCard.js";
 import PostCard from "./postCard.js";
+import TournemantContainer from "../Games/TournmentsContainer.js";
 
 // controllers
+import _Tournemants from "../../Controller/Tournemant.js";
 // import Matches from "../../Controller/matches.js";
 // import Game from "../../Controller/Game.js";
 
 class Home extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      recentTournemants: []
+    };
 
     this.postData = [
       {
@@ -81,6 +85,16 @@ class Home extends Component {
     ];
   }
 
+  async UNSAFE_componentWillMount() {
+    // get recent tournemants
+    var _tournemantsList = await _Tournemants.getRecentTournemants();
+    console.log(_tournemantsList);
+
+    await this.setState({
+      recentTournemants: _tournemantsList
+    });
+  }
+
   render() {
     var settings = {
       dots: true,
@@ -123,12 +137,12 @@ class Home extends Component {
       <div className="container-fluid">
         {/* Games */}
         <div className="container home_container row">
-          <GameCard img={LOL} title="LOL" />
-          <GameCard img={DOTA2} title="DOTA 2" />
-          <GameCard img={OverWatch} title="OVERWATCH" />
+          <GameCard img={LOL} title="LOL" link="/games/lol" />
+          <GameCard img={DOTA2} title="DOTA 2" link="/games/dota2" />
+          <GameCard img={OverWatch} title="OVERWATCH" link="/games/overwatch " />
           <div className="col-sm-2"></div>
-          <GameCard img={CSGO} title="CS:GO" />
-          <GameCard img={PUBG} title="pubg" />
+          <GameCard img={CSGO} title="CS:GO" link="games/csgo" />
+          <GameCard img={PUBG} title="pubg" link="/games/pubg" />
           <div className="col-sm-2"></div>
         </div>
 
@@ -143,6 +157,14 @@ class Home extends Component {
               individually or as teams.
             </p>
           </center>
+        </div>
+
+        {/* recent Tournemants */}
+        <div className="container home_container">
+          <h1>Recent Tournemants and Prize Pools</h1>
+          {/* <hr /> */}
+
+          <TournemantContainer data={this.state.recentTournemants} />
         </div>
 
         {/* Upcomming Leagus */}

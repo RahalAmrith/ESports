@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import Pagination from "react-js-pagination";
 
 import "../assets/games/matchesContainer.css";
+
+// controllers
+import Game from "../../Controller/Game.js";
 
 // placeHolders
 import PlayerPlaceholder from "../images/placeholders/person.jpg";
@@ -8,24 +12,40 @@ import PlayerPlaceholder from "../images/placeholders/person.jpg";
 class TournamentsContainer extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      pageNum: 1
+    };
+  }
+
+  handlePaging(pgno) {
+    this.setState({
+      pageNum: pgno
+    });
   }
 
   render() {
-    var _matchesList = this.props.data.map((data, i) => {
+    var resCount = this.props.data.length;
+    var pageCount = Math.ceil(resCount / 10);
+    var floor = (this.state.pageNum - 1) * 10;
+    var ceil = this.state.pageNum * 10 - 1;
+
+    if (ceil > resCount - 1) {
+      ceil = resCount - 1;
+    }
+
+    var _matchesList = this.props.data.slice(floor, ceil + 1).map((data, i) => {
       return (
         <tr key={i}>
-          <th scope="row">
-            <img
-              alt=""
-              src={data.image_url === null ? PlayerPlaceholder : data.image_url}
-            />
-          </th>
+          <td>
+            <img alt={data.videogame.name} src={Game.getLogoByID(data.videogame.id)} />
+          </td>
+          <td>{data.videogame.name}</td>
+          <td>{data.league.name}</td>
+          <td>{data.serie !== undefined ? data.serie.full_name : "-"}</td>
           <td>{data.name}</td>
-          <td>{data.slug || "-"}</td>
-          <td>{data.nationality || "-"}</td>
-          <td>{data.current_team === null ? "N/A" : data.current_team.slug}</td>
-          <td>{data.role || "-"}</td>
+          <td>
+            <span style={{ color: "#00FF00" }}>{data.prizepool || "-"} </span>
+          </td>
         </tr>
       );
     });
@@ -34,16 +54,32 @@ class TournamentsContainer extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Slug</th>
-              <th scope="col">Country</th>
-              <th scope="col">Team</th>
-              <th scope="col">Role</th>
+              <th colSpan="2" scope="col">Game</th>
+              <th scope="col">League</th>
+              <th scope="col">Series</th>
+              <th scope="col">Tournemant</th>
+              <th scope="col">Prize Pool</th>
             </tr>
           </thead>
           <tbody>{_matchesList}</tbody>
         </table>
+
+        <div className="pagination">
+          <center>
+            {/* <div> */}
+            <Pagination
+              activePage={this.state.pageNum}
+              itemsCountPerPage={10}
+              totalItemsCount={pageCount * 10}
+              pageRangeDisplayed={window.innerWidth < 768 ? 5 : 10}
+              itemClass="page-item"
+              linkClass="page-link"
+              innerClass="pagination_bar"
+              onChange={pgno => this.handlePaging(pgno)}
+            />
+            {/* </div> */}
+          </center>
+        </div>
       </div>
     );
   }

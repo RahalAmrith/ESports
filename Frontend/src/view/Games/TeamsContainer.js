@@ -34,17 +34,17 @@ class TeamsContainer extends Component {
 
     var _matchesList = this.props.data.slice(floor, ceil + 1).map((data, i) => {
       return (
-        <Link  key={i} to={"/team/" + data.id}>
+        <Link key={i} to={"/team/" + data.id}>
           {/* <tr key={i}> */}
-            <th scope="row">
-              <img
-                alt=""
-                src={data.image_url === null ? TeamPlaceholder : data.image_url}
-              />
-            </th>
-            <td>{data.name}</td>
-            <td>{data.acronym || "-"}</td>
-            <td>{data.location || "-"}</td>
+          <th scope="row">
+            <img
+              alt=""
+              src={data.image_url === null ? TeamPlaceholder : data.image_url}
+            />
+          </th>
+          <td>{data.name}</td>
+          <td>{data.acronym || "-"}</td>
+          <td>{data.location || "-"}</td>
           {/* </tr> */}
         </Link>
       );
