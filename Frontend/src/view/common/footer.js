@@ -34,14 +34,24 @@ class Footer extends Component {
           <div className="col-sm-4">
             <h5>Games</h5>
             <ul>
-              <li>League of Legends</li>
-              <li>DOTA 2</li>
-              <li>OverWatch</li>
-              <li>CS:GO</li>
               <li>
-                <Link to="/games/pubg">
-                  PUBG
-                </Link>
+                {" "}
+                <Link to="/games/">League of Legends</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="/games/">DOTA 2</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="/games/">OverWatch</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="/games/">CS:GO</Link>
+              </li>
+              <li>
+                <Link to="/games/pubg">PUBG</Link>
               </li>
             </ul>
           </div>

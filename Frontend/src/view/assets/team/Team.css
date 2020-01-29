@@ -18,7 +18,7 @@
 }
 
 .Team_details {
-    padding-top: 20px;
+  padding-top: 20px;
   padding-left: 25px;
   color: #ffffff;
 }
@@ -29,36 +29,47 @@
   padding-left: 0px;
 }
 
-.Team_players{
-    color: #FFFFFF;
-    margin-bottom: 25px;
+.Team_players {
+  color: #ffffff;
+  margin-bottom: 25px;
 }
 
-.Team_players hr{
-    border-color: #ffffff;
+.Team_players hr {
+  border-color: #ffffff;
 }
 
-.PlayerCard{
-    background-color: #00000055;
-    text-align: center;
-    padding: 15px 5px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    min-height: 325px;
+.PlayerCard {
+  background-color: #00000055;
+  text-align: center;
+  padding: 15px 5px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  min-height: 325px;
 }
 
-.PlayerCard img{
-   width: calc(80% - 10px);
-   border-radius: 50%;
-   margin-bottom: 15px;
-   background-color: #FFFFFF22;
+.PlayerCard img {
+  width: calc(80% - 10px);
+  border-radius: 50%;
+  margin-bottom: 15px;
+  background-color: #ffffff22;
 }
 
-.PlayerCard h6{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.PlayerCard h4 {
+  text-decoration: none;
+  color: #ffffff;
 }
 
-.PlayerCard h5{
-    color: royalblue;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.PlayerCard *:hover {
+  text-decoration: none !important;
+}
+.PlayerCard h6 {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.PlayerCard h5 {
+  text-decoration: none;
+  color: royalblue;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }

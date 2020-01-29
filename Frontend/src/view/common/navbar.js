@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import "../assets/common/navbar.css";
-import '../../App.css'
+import "../../App.css";
 
 import Logo from "../images/navbar/logo.png";
 
@@ -39,25 +39,16 @@ class NavBar extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Leagues
-                </a>
+                <Link className="nav-link" to="/earnnings">
+                  Earnnings
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Tournements
-                </a>
+                <Link className="nav-link" to="/blog">
+                  Blog
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Players
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Teams
-                </a>
-              </li>
+              
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -68,18 +59,18 @@ class NavBar extends Component {
                   Games
                 </a>
                 <div className="dropdown-menu">
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/games/lol">
                     League of Legends
-                  </a>
-                  <a className="dropdown-item" href="/">
+                  </Link>
+                  <Link className="dropdown-item" to="/games/dota2">
                     Dota 2
-                  </a>
-                  <a className="dropdown-item" href="/">
+                  </Link>
+                  <Link className="dropdown-item" to="/games/overwatch">
                     Overwatch
-                  </a>
-                  <a className="dropdown-item" href="/">
+                  </Link>
+                  <Link className="dropdown-item" to="/games/csgo">
                     CS:GO
-                  </a>
+                  </Link>
                   <Link className="dropdown-item" to="/games/pubg">
                     PUBG
                   </Link>

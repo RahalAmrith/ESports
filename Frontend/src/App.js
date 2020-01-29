@@ -14,6 +14,8 @@ import DOTA2 from "./view/Games/DOTA2/DOTA2.js";
 import Overwatch from "./view/Games/Overwatch/Overwatch.js";
 import Team from "./view/Team/Team.js";
 import _LOL from "./Controller/LOL";
+import CSGO from "./view/Games/CSGO/CSGO.js";
+import Player from "./view/Player/Player.js";
 
 class App extends Component {
   constructor() {
@@ -67,11 +69,25 @@ class App extends Component {
               render={props => <Overwatch {...props} />}
             />
             <Route
+              path="/games/csgo"
+              exact
+              strict
+              // component={Landing}
+              render={props => <CSGO {...props} />}
+            />
+            <Route
               path="/team/:id"
               exact
               strict
               // component={Landing}
               render={props => <Team {...props} />}
+            />
+            <Route
+              path="/player/:id"
+              exact
+              strict
+              // component={Landing}
+              render={props => <Player {...props} />}
             />
           </Switch>
           <Footer />

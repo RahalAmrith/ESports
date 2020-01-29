@@ -17,3 +17,7 @@ body {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+a:hover{
+  text-decoration: none !important;
+}

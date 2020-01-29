@@ -139,7 +139,7 @@ class Home extends Component {
         <div className="container home_container row">
           <GameCard img={LOL} title="LOL" link="/games/lol" />
           <GameCard img={DOTA2} title="DOTA 2" link="/games/dota2" />
-          <GameCard img={OverWatch} title="OVERWATCH" link="/games/overwatch " />
+          <GameCard img={OverWatch} title="OVERWATCH" link="/games/overwatch" />
           <div className="col-sm-2"></div>
           <GameCard img={CSGO} title="CS:GO" link="games/csgo" />
           <GameCard img={PUBG} title="pubg" link="/games/pubg" />
