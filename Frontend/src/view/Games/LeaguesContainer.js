@@ -2,6 +2,9 @@ import React, { Component } from "react";
 
 import "../assets/games/leaguesContainer.css";
 
+// spinners
+import TableSpinner from "../images/common/tableSpinner.svg";
+
 class LeaguesContainer extends Component {
   constructor() {
     super();
@@ -23,6 +26,9 @@ class LeaguesContainer extends Component {
     });
     return (
       <div style={this.props.style} className="container row LeaguesContainer">
+        {this.props.data.length === 0 ? (
+          <img className="tableSpinner" alt="" src={TableSpinner} />
+        ) : null}
         {list}
       </div>
     );

@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import Pagination from "react-js-pagination";
+import { Link } from "react-router-dom";
 
 import "../assets/games/matchesContainer.css";
 
 // placeHolders
 import PlayerPlaceholder from "../images/placeholders/person.jpg";
+
+// spinners
+import TableSpinner from "../images/common/tableSpinner.svg";
 
 // require("bootstrap/less/bootstrap.less");
 
@@ -34,19 +38,27 @@ class PlayersContainer extends Component {
 
     var _matchesList = this.props.data.slice(floor, ceil + 1).map((data, i) => {
       return (
-        <tr key={i}>
-          <th scope="row">
-            <img
-              alt=""
-              src={data.image_url === null ? PlayerPlaceholder : data.image_url}
-            />
-          </th>
-          <td>{(data.first_name || "") + " " + (data.last_name || "")}</td>
-          <td>{data.name || "-"}</td>
-          <td>{data.nationality || "-"}</td>
-          <td>{data.current_team === null ? "N/A" : data.current_team.slug}</td>
-          <td>{data.role || "-"}</td>
-        </tr>
+        <Link key={i} to={"/player/" + data.id}>
+          
+          {/* <tr key={i}> */}
+            <th scope="row">
+              <img
+                alt=""
+                src={
+                  data.image_url === null ? PlayerPlaceholder : data.image_url
+                }
+              />
+            </th>
+            <td>{(data.first_name || "") + " " + (data.last_name || "")}</td>
+            <td>{data.name || "-"}</td>
+            <td>{data.nationality || "-"}</td>
+            <td>
+              {data.current_team === null ? "N/A" : data.current_team.slug}
+            </td>
+            <td>{data.role || "-"}</td>
+            //{" "}
+          {/* </tr> */}
+        </Link>
       );
     });
     return (
@@ -62,7 +74,18 @@ class PlayersContainer extends Component {
               <th scope="col">Role</th>
             </tr>
           </thead>
-          <tbody>{_matchesList}</tbody>
+          <tbody>
+            {this.props.data.length === 0 ? (
+              <tr>
+                <td colSpan="6">
+                  <center>
+                    <img className="tableSpinner" alt="" src={TableSpinner} />
+                  </center>
+                </td>
+              </tr>
+            ) : null}
+            {_matchesList}
+          </tbody>
         </table>
 
         <div className="pagination">

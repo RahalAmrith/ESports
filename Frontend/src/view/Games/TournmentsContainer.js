@@ -9,6 +9,9 @@ import Game from "../../Controller/Game.js";
 // placeHolders
 import PlayerPlaceholder from "../images/placeholders/person.jpg";
 
+// spinners
+import TableSpinner from "../images/common/tableSpinner.svg";
+
 class TournamentsContainer extends Component {
   constructor() {
     super();
@@ -37,7 +40,10 @@ class TournamentsContainer extends Component {
       return (
         <tr key={i}>
           <td>
-            <img alt={data.videogame.name} src={Game.getLogoByID(data.videogame.id)} />
+            <img
+              alt={data.videogame.name}
+              src={Game.getLogoByID(data.videogame.id)}
+            />
           </td>
           <td>{data.videogame.name}</td>
           <td>{data.league.name}</td>
@@ -54,12 +60,23 @@ class TournamentsContainer extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th colSpan="2" scope="col">Game</th>
+              <th colSpan="2" scope="col">
+                Game
+              </th>
               <th scope="col">League</th>
               <th scope="col">Series</th>
               <th scope="col">Tournemant</th>
               <th scope="col">Prize Pool</th>
             </tr>
+            {this.props.data.length === 0 ? (
+              <tr>
+                <td colSpan="6">
+                  <center>
+                    <img className="tableSpinner" alt="" src={TableSpinner} />
+                  </center>
+                </td>
+              </tr>
+            ) : null}
           </thead>
           <tbody>{_matchesList}</tbody>
         </table>

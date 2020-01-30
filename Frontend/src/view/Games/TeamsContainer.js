@@ -1,3 +1,5 @@
+// eslint-disable
+
 import React, { Component } from "react";
 import Pagination from "react-js-pagination";
 
@@ -7,6 +9,9 @@ import "../assets/games/matchesContainer.css";
 
 // placeholders
 import TeamPlaceholder from "../images/placeholders/team.png";
+
+// spinners
+import TableSpinner from "../images/common/tableSpinner.svg";
 
 class TeamsContainer extends Component {
   constructor() {
@@ -60,7 +65,18 @@ class TeamsContainer extends Component {
               <th scope="col">Country</th>
             </tr>
           </thead>
-          <tbody>{_matchesList}</tbody>
+          <tbody>
+            {this.props.data.length === 0 ? (
+              <tr>
+                <td colSpan="6">
+                  <center>
+                    <img className="tableSpinner" alt="" src={TableSpinner} />
+                  </center>
+                </td>
+              </tr>
+            ) : null}
+            {_matchesList}
+          </tbody>
         </table>
 
         <div className="pagination">

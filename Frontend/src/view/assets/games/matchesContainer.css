@@ -93,3 +93,10 @@
   cursor: no-drop;
   opacity: 0.3;
 }
+
+.tableSpinner{
+  width: 100% !important;
+  height: 100px !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+}
