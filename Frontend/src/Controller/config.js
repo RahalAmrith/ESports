@@ -67,3 +67,18 @@ class Env {
 const _env = new Env();
 
 export default _env;
+
+
+
+// ==================================================
+
+/*
+esports db
+
+host : 18.220.184.55
+port : 5432
+username : esports
+password : esports@jontyslgaming
+db : esports
+
+*/
