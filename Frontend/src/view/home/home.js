@@ -88,10 +88,27 @@ class Home extends Component {
   async UNSAFE_componentWillMount() {
     // get recent tournemants
     var _tournemantsList = await _Tournemants.getRecentTournemants();
-    console.log(_tournemantsList);
 
+    console.log(_tournemantsList);
+    
+
+    var _finalTournemantsList = [];
+
+    await _tournemantsList.map((data,i) => {
+      if (data.prizepool !== null) {
+        _finalTournemantsList.push(data);
+      }
+    });
+    await _tournemantsList.map((data,i) => {
+      if (data.prizepool === null) {
+        _finalTournemantsList.push(data);
+      }
+    });
+
+    console.log(_finalTournemantsList);
+    
     await this.setState({
-      recentTournemants: _tournemantsList
+      recentTournemants: _finalTournemantsList
     });
   }
 

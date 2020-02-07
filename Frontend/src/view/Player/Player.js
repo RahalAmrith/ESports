@@ -9,10 +9,17 @@ import _Player from "../../Controller/Player.js";
 // placeHolders
 import PlayerPlaceholder from "../images/placeholders/person.jpg";
 
+// spinners
+import TableSpinner from "../images/common/tableSpinner.svg";
+
 class Player extends Component {
   constructor() {
     super();
     this.state = {
+      // page data
+      loading: true,
+
+      // player Data
       birth_year: null,
       birthday: null,
       current_team: {
@@ -49,47 +56,54 @@ class Player extends Component {
     console.log(playerData);
 
     this.setState({ ...playerData });
+    this.setState({
+      loading : false
+    })
   }
 
   render() {
-    return (
-      <div className="container-fluid">
-        <div className="container row Team_banner">
-          <div className="col-sm-3 Team_logo">
-            <center>
-              <img
-                src={
-                  this.state.image_url === null
-                    ? PlayerPlaceholder
-                    : this.state.image_url
-                }
-              ></img>
-            </center>
-          </div>
-          <div className="col-sm-9 Team_details">
-            <h2>{this.state.name}</h2>
-
-            <ul>
-              <li>
-                <b> Location : </b>
-                {this.state.nationality}
-              </li>
-              <li>
-                <b> Video Game : </b>
-                {this.state.current_videogame.name}
-              </li>
-              <li>
+    if (this.state.loading) {
+      return <img className="tableSpinner" alt="" src={TableSpinner} />;
+    } else {
+      return (
+        <div className="container-fluid">
+          <div className="container row Team_banner">
+            <div className="col-sm-3 Team_logo">
+              <center>
                 <img
-                  style={{ height: "60px", marginTop : "8px" }}
-                  alt={this.state.current_videogame.name}
-                  src={Game.getLogoByID(this.state.current_videogame.id)}
-                />
-              </li>
-            </ul>
+                  src={
+                    this.state.image_url === null
+                      ? PlayerPlaceholder
+                      : this.state.image_url
+                  }
+                ></img>
+              </center>
+            </div>
+            <div className="col-sm-9 Team_details">
+              <h2>{this.state.name}</h2>
+
+              <ul>
+                <li>
+                  <b> Location : </b>
+                  {this.state.nationality}
+                </li>
+                <li>
+                  <b> Video Game : </b>
+                  {this.state.current_videogame.name}
+                </li>
+                <li>
+                  <img
+                    style={{ height: "60px", marginTop: "8px" }}
+                    alt={this.state.current_videogame.name}
+                    src={Game.getLogoByID(this.state.current_videogame.id)}
+                  />
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

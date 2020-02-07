@@ -36,19 +36,19 @@ class Footer extends Component {
             <ul>
               <li>
                 {" "}
-                <Link to="/games/">League of Legends</Link>
+                <Link to="/games/lol">League of Legends</Link>
               </li>
               <li>
                 {" "}
-                <Link to="/games/">DOTA 2</Link>
+                <Link to="/games/dota2">DOTA 2</Link>
               </li>
               <li>
                 {" "}
-                <Link to="/games/">OverWatch</Link>
+                <Link to="/games/overwatch">OverWatch</Link>
               </li>
               <li>
                 {" "}
-                <Link to="/games/">CS:GO</Link>
+                <Link to="/games/csgo">CS:GO</Link>
               </li>
               <li>
                 <Link to="/games/pubg">PUBG</Link>
