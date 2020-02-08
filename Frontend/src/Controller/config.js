@@ -4,7 +4,7 @@ import qs from "query-string";
 class Env {
   constructor() {
     // local server
-    this.host = "http://127.0.0.1";
+    this.host = "http://18.220.184.55";
     this.port = ":5500";
 
     // local APIs
@@ -33,6 +33,8 @@ class Env {
   }
 
   async callAPI(uri, params) {
+    console.log("calling apis");
+    
     var _response = [];
     var requestBody = {
       apiuri: uri
@@ -46,10 +48,13 @@ class Env {
     }
 
     await Axios.post(
-      `${this.getHost()}${this.port}${this.api.pandascore}`,
+      // `${this.getHost()}${this.port}${this.api.pandascore}`,
+      `${this.host}${this.port}${this.api.pandascore}`,
       requestBody
     )
       .then(async response => {
+        console.log(response);
+        
         _response = response.data;
       })
       .catch(async error => {

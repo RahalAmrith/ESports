@@ -19,70 +19,15 @@ import TournemantContainer from "../Games/TournmentsContainer.js";
 import _Tournemants from "../../Controller/Tournemant.js";
 // import Matches from "../../Controller/matches.js";
 // import Game from "../../Controller/Game.js";
+import Blog from "../../Controller/Blog.js";
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
-      recentTournemants: []
+      recentTournemants: [],
+      recentPostList : []
     };
-
-    this.postData = [
-      {
-        img:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
-        title: "Post Title 01",
-        desc:
-          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
-        link:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
-      },
-      {
-        img:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
-        title: "Post Title 02",
-        desc:
-          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
-        link:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
-      },
-      {
-        img:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
-        title: "Post Title 03",
-        desc:
-          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
-        link:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
-      },
-      {
-        img:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
-        title: "Post Title 04",
-        desc:
-          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
-        link:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
-      },
-      {
-        img:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
-        title: "Post Title 05",
-        desc:
-          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
-        link:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
-      },
-      {
-        img:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg",
-        title: "Post Title 06",
-        desc:
-          "The screams of 18,000 people packed into a Shanghai stadium swell to a crescendo. Slight of figure and mostly bespectacled, 10 young men take their seats in LED-lined boxes straight out of...",
-        link:
-          "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/isBqQ09k04Mc/v1/1000x-1.jpg"
-      }
-    ];
   }
 
   async UNSAFE_componentWillMount() {
@@ -90,25 +35,32 @@ class Home extends Component {
     var _tournemantsList = await _Tournemants.getRecentTournemants();
 
     console.log(_tournemantsList);
-    
 
     var _finalTournemantsList = [];
 
-    await _tournemantsList.map((data,i) => {
+    await _tournemantsList.map((data, i) => {
       if (data.prizepool !== null) {
         _finalTournemantsList.push(data);
       }
     });
-    await _tournemantsList.map((data,i) => {
+    await _tournemantsList.map((data, i) => {
       if (data.prizepool === null) {
         _finalTournemantsList.push(data);
       }
     });
 
     console.log(_finalTournemantsList);
-    
+
     await this.setState({
       recentTournemants: _finalTournemantsList
+    });
+
+    // get resent posts
+
+    var _recentPosts = await Blog.getPostList();
+
+    await this.setState({
+      recentPostList: _recentPosts
     });
   }
 
@@ -117,7 +69,7 @@ class Home extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
+      slidesToShow: this.state.recentPostList.length > 4 ? 4 : this.state.recentPostList.length,
       slidesToScroll: 4,
       responsive: [
         {
@@ -147,7 +99,7 @@ class Home extends Component {
       ]
     };
 
-    const _posts = this.postData.map((data, i) => {
+    const _posts = this.state.recentPostList.map((data, i) => {
       return <PostCard key={i} data={data} />;
     });
     return (
