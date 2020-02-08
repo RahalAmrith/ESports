@@ -1,7 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+
+// routers
 const sports_router = require('./app/routes/sports.router'); 
+const posts_router = require('./app/routes/posts.router'); 
 
 const app = express();
 
@@ -13,6 +16,7 @@ app.get("/", (req, res) => res.send("Hello"));
 
 
 app.use("/api/sports", sports_router);
+app.use("/api/posts", posts_router);
 
 
 const port = process.env.PORT || 5500;
