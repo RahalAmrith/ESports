@@ -43,20 +43,19 @@ class Post {
     }
   }
 
-//   addPost(req, res) {
-//     var _title = req.body.title || "";
-//     var _img = req.body.img || "";
-//     var _content = req.body.content || "";
-
-//     db.query('insert into blog(title ,img ,"content", "date") values($1, $2, $3, current_date )', [_title, _img, _content])
-//       .then(results => {
-//         res.status(200).send(results);
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         res.status(400).send(err);
-//       });
-//   }
+  addPost(req, res) {
+    var _title = req.body.title || "";
+    var _img = req.body.img || "";
+    var _content = req.body.content || "";
+    db.query('insert into blog(title ,img ,"content", "date") values($1, $2, $3, current_date )', [_title, _img, _content])
+      .then(results => {
+        res.status(200).send(results);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(400).send(err);
+      });
+  }
 }
 
 module.exports = new Post();
