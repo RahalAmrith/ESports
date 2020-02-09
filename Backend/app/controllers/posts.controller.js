@@ -22,7 +22,7 @@ class Post {
   
   list(req, res) {
     console.log("listing posts");
-    db.query("SELECT * FROM blog")
+    db.query("SELECT * FROM blog order by rid desc")
       .then(result => {
         res.status(200).send(result.rows);
       })

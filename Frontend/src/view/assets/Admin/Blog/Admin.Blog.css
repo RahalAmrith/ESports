@@ -1,0 +1,27 @@
+.ad_b_main {
+  text-align: center;
+  color: #ffffff;
+}
+
+.ad_b_main .mainTitle{
+  font-size: 50px;
+}
+
+.ad_b_main hr{
+    border: solid 1px #FFFFFF;
+}
+
+.ad_formContainer{
+text-align: left;
+}
+
+.ad_formContainer{
+    margin: 25px auto;
+}
+
+.ad_formContainer img{
+    max-height: 250px;
+    width: 100%;
+    object-fit: contain;
+    margin: 15px 0px;
+}

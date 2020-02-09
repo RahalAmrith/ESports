@@ -16,6 +16,8 @@ import Team from "./view/Team/Team.js";
 import _LOL from "./Controller/LOL";
 import CSGO from "./view/Games/CSGO/CSGO.js";
 import Player from "./view/Player/Player.js";
+import Admin from './view/Admin/Admin.js'
+import Admin_Blog from "./view/Admin/Blog/Admin.Blog.js";
 
 class App extends Component {
   constructor() {
@@ -88,6 +90,20 @@ class App extends Component {
               strict
               // component={Landing}
               render={props => <Player {...props} />}
+            />
+            <Route
+              path="/admin"
+              strict
+              exact
+              // component={Landing}
+              render={props => <Admin {...props} />}
+            />
+            <Route
+              path="/admin/Blog"
+              exact
+              strict
+              // component={Landing}
+              render={props => <Admin_Blog {...props} />}
             />
           </Switch>
           <Footer />
