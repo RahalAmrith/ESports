@@ -59,6 +59,9 @@ class Home extends Component {
 
     var _recentPosts = await Blog.getPostList();
 
+    console.log(_recentPosts);
+    
+
     await this.setState({
       recentPostList: _recentPosts
     });

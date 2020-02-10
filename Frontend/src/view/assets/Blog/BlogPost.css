@@ -1,0 +1,16 @@
+.bp_container{
+    background-color: #00000055;
+    border-radius: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.bp_img{
+    max-height: 280px;
+    padding: 15px;
+}
+
+.bp_img img{
+    max-height: 250px;
+}

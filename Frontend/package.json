@@ -9,6 +9,7 @@
     "axios": "^0.19.1",
     "bootstrap": "^4.4.1",
     "draft-js": "^0.11.0",
+    "draftjs-to-html": "^0.9.1",
     "query-string": "^6.10.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

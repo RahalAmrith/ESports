@@ -25,11 +25,33 @@ class Blog {
     return results;
   }
 
-  async AddPost(_title, _img, _content) {
+  async getPost(id) {
+    var results;
+    var Data = {
+      rid: id
+    };
+    await Axios.post(`${Config.host}${Config.port}${this.api.getPost}`, Data)
+      .then(Response => {
+        if (Response.data.length > 0) {
+          results = Response.data[0];
+        } else {
+          results = [];
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        results = [];
+      });
+
+    return results;
+  }
+
+  async AddPost(_title, _img, _description, _content) {
     var PostData = {
       title: _title,
       img: _img,
-      content: _content
+      content: _content,
+      description: _description
     };
 
     var results;

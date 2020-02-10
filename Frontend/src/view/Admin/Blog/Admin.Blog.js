@@ -15,9 +15,10 @@ class Admin_Blog extends Component {
     super();
     this.state = {
       // addPost
-      ap_imgUrl: null
+      ap_imgUrl: null,
 
-      // html editoe
+      // html editor
+      htmlContent: null
     };
   }
 
@@ -37,11 +38,11 @@ class Admin_Blog extends Component {
 
   onEditorStateChange(editorState) {
     var res = convertToRaw(editorState.getCurrentContent());
-    console.log(res);
 
-    // this.setState({
-    //   editorState
-    // });
+    this.setState({
+      htmlContent : res
+    });
+    console.log(this.state);
   }
 
   async addPost(e) {
@@ -50,9 +51,10 @@ class Admin_Blog extends Component {
 
     var title = e.target.title.value;
     var img = e.target.img.value;
-    var content = e.target.content.value;
+    var description = e.target.content.value;
+    var content = this.state.htmlContent
 
-    var res = await Blog_Controller.AddPost(title, img, content);
+    var res = await Blog_Controller.AddPost(title, img,description, content);
 
     if (res) {
       alert("Post added Successfully !");
@@ -77,11 +79,11 @@ class Admin_Blog extends Component {
 
           <form onSubmit={event => this.addPost(event)}>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Title</label>
+              <label>Title</label>
               <input type="text" name="title" class="form-control" />
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Image Url</label>
+              <label>Image Url</label>
               <input
                 type="url"
                 name="img"

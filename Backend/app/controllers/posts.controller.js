@@ -32,7 +32,7 @@ class Post {
 
   getPost(req, res) {
     if (req.body.rid) {
-      db.query(`SELECT * FROM blog WHERE rid=${req.body.rid}`)
+      db.query(`SELECT * FROM blog WHERE rid=$1`, [req.body.rid])
         .then(result => {
           res.status(200).send(result.rows);
         })
@@ -53,7 +53,7 @@ class Post {
     )
       .then(results => {
         console.log("post added");
-        
+
         res.status(200).send(results);
       })
       .catch(err => {

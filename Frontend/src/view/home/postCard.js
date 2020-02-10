@@ -12,7 +12,7 @@ class PostCard extends Component {
     return (
       <div
         className="es_home_PostCard"
-        onClick={() => window.open(this.props.data.link)}
+        onClick={() => window.open(`/blog/post/${this.props.data.rid}`)}
       >
         <div
           style={{ backgroundImage: `url(${this.props.data.img})` }}
