@@ -19,7 +19,7 @@ class PostCard extends Component {
           className="es_h_pc_img"
         ></div>
         <h3>{this.props.data.title}</h3>
-        <p>{this.props.data.content}</p>
+        <p>{this.props.data.description}</p>
         <button>Read More</button>
       </div>
     );

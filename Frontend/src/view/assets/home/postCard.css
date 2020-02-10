@@ -30,6 +30,7 @@
   text-overflow: ellipsis;
   width: 100%;
   overflow: hidden;
+  font-size: 16px;
 }
 
 .es_home_PostCard p {
