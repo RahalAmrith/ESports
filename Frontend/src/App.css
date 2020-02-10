@@ -3,7 +3,7 @@ body {
   background: linear-gradient(to right, #3a6073dd, #16222add),
     url("https://cdn.wallpapersafari.com/3/24/RnzoUB.jpg");
 
-  font-family: "Almendra SC";
+  /* font-family: "Almendra SC"; */
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

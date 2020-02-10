@@ -111,7 +111,7 @@ class Home extends Component {
           <GameCard img={OverWatch} title="OVERWATCH" link="/games/overwatch" />
           <div className="col-sm-2"></div>
           <GameCard img={CSGO} title="CS:GO" link="games/csgo" />
-          <GameCard img={PUBG} title="pubg" link="/games/pubg" />
+          <GameCard img={PUBG} title="PUBG" link="/games/pubg" />
           <div className="col-sm-2"></div>
         </div>
 

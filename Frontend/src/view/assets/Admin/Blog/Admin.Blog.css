@@ -25,3 +25,17 @@ text-align: left;
     object-fit: contain;
     margin: 15px 0px;
 }
+
+.AD_B_htmlEditor{
+color: #000000;
+}
+
+.AD_B_htmlEditor label{
+color: #FFFFFF;
+}
+
+.AD_B_htmlEditor .wrapperClassName{
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 8px 10px;
+}

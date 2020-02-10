@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 
+// libraries
+import { Editor } from "react-draft-wysiwyg";
+import { EditorState, convertToRaw } from "draft-js";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
 import "../../assets/Admin/Blog/Admin.Blog.css";
 
 // controllers
@@ -11,6 +16,8 @@ class Admin_Blog extends Component {
     this.state = {
       // addPost
       ap_imgUrl: null
+
+      // html editoe
     };
   }
 
@@ -28,10 +35,19 @@ class Admin_Blog extends Component {
     }
   }
 
+  onEditorStateChange(editorState) {
+    var res = convertToRaw(editorState.getCurrentContent());
+    console.log(res);
+
+    // this.setState({
+    //   editorState
+    // });
+  }
+
   async addPost(e) {
     e.persist();
     e.preventDefault();
-    
+
     var title = e.target.title.value;
     var img = e.target.img.value;
     var content = e.target.content.value;
@@ -50,6 +66,7 @@ class Admin_Blog extends Component {
   }
 
   render() {
+    const { editorState } = this.state;
     return (
       <div className="ad_b_main">
         <h1 className="mainTitle">Blog</h1>
@@ -79,8 +96,21 @@ class Admin_Blog extends Component {
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Content</label>
+              <label for="exampleFormControlTextarea1">Description</label>
               <textarea class="form-control" rows="3" name="content"></textarea>
+            </div>
+
+            <div class="form-group  AD_B_htmlEditor">
+              <label for="exampleFormControlInput1">Content</label>
+              <Editor
+                // editorState={editorState}
+                toolbarClassName="toolbarClassName"
+                wrapperClassName="wrapperClassName"
+                editorClassName="editorClassName"
+                onEditorStateChange={editorState =>
+                  this.onEditorStateChange(editorState)
+                }
+              />
             </div>
 
             <button type="submit" class="btn btn-primary">
