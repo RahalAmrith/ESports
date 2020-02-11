@@ -3,8 +3,8 @@ const rp = require("request-promise");
 const { Pool } = require("pg");
 
 var db = new Pool({
-  host: "18.220.184.55",
-  // host: "127.0.0.1",
+  // host: "18.220.184.55",
+  host: "127.0.0.1",
   user: "esports",
   database: "esports",
   password: "esports@jontyslgaming"
