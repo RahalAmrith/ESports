@@ -4,7 +4,7 @@ import qs from "query-string";
 class Env {
   constructor() {
     // local server
-    this.host = "http://18.220.184.55";
+    this.host = "http://176.223.134.186";
     this.port = ":5500";
 
     // local APIs
