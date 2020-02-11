@@ -106,7 +106,7 @@ class Admin_Blog extends Component {
               <label for="exampleFormControlInput1">Content</label>
               <Editor
                 // editorState={editorState}
-                toolbarClassName="toolbarClassName"
+                toolbarClassName="bp_content_toolbar"
                 wrapperClassName="wrapperClassName"
                 editorClassName="editorClassName"
                 onEditorStateChange={editorState =>

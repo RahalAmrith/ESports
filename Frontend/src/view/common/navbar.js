@@ -19,8 +19,8 @@ class NavBar extends Component {
         {/* Bootstrap Nav Bar */}
 
         <nav className="navbar navbar-expand-md navbar-dark">
-          <a className="navbar-brand" href="/">
-            <img alt="logo" className="es_nav_logo" src={Logo} />
+          <a className="es_navbar-logo" href="/">
+            <img alt="logo" src={Logo} />
           </a>
           <button
             className="navbar-toggler"
@@ -48,7 +48,7 @@ class NavBar extends Component {
                   Blog
                 </Link>
               </li>
-              
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"

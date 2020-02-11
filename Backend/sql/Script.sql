@@ -6,4 +6,4 @@ alter table blog rename column "content" to "description";
 
 alter table blog add column "content" varchar;
 
-delete from blog where rid = 17
+delete from blog where rid = 16

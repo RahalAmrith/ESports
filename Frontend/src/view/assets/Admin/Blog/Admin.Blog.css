@@ -17,13 +17,14 @@ text-align: left;
 
 .ad_formContainer{
     margin: 25px auto;
+    padding: 15px;
 }
 
 .ad_formContainer img{
-    max-height: 250px;
-    width: 100%;
-    object-fit: contain;
-    margin: 15px 0px;
+  max-height: 450px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .AD_B_htmlEditor{
@@ -35,7 +36,15 @@ color: #FFFFFF;
 }
 
 .AD_B_htmlEditor .wrapperClassName{
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: #00000055;
+  color: #FFFFFF;
   padding: 8px 10px;
+}
+
+.bp_content_toolbar{
+  color: #000000;
+  position: sticky;
+  top: 0px;
+  background-color: #FFFFFF;
+  z-index: 1000;
 }

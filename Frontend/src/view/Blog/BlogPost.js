@@ -20,13 +20,13 @@ class BlogPost extends Component {
 
     const _markup = await draftToHtml(JSON.parse(this.state.content));
 
+    console.log(JSON.parse(this.state.content))
+
     console.log(_markup);
 
     await this.setState({
       markUp: _markup
     });
-
-    await console.log(this.state);
   }
 
   componentDidUpdate(){
@@ -48,7 +48,7 @@ class BlogPost extends Component {
           </div>
 
           {/* Content */}
-          <div className="col-12 bp_container" id="bp_content"></div>
+          <div className="col-12 bp_container bp_content" id="bp_content"></div>
         </div>
       </div>
     );
