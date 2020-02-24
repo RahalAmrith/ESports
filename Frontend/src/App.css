@@ -21,3 +21,7 @@ body {
 a:hover{
   text-decoration: none !important;
 }
+
+button:focus{
+  outline: none;
+}

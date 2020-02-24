@@ -1,5 +1,5 @@
 .home_game_card {
-  height: 200px;
+  height: 100px;
   margin: 15px 0px;
   background-size: cover;
   background-position: center;
@@ -25,10 +25,10 @@
 }
 
 .home_game_card_content h1 {
-  line-height: 170px;
+  line-height: 70px;
   margin-top: -200px;
   transition-duration: 0.3s;
-  font-size: 50px;
+  font-size: 20px;
   text-decoration: none;
   color: #ffffff;
   text-decoration: none;

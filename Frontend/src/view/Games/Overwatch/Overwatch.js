@@ -7,7 +7,7 @@ import Config from "../../../Controller/config.js";
 import _Overwatch from "../../../Controller/overwatch.js";
 
 // images
-import BannerImg from "../../images/home/overwatch.jpg";
+import BannerImg from "../../images/home/overwatch_esportsearnings.jpg";
 
 // views
 import LeaguesContainer from "../LeaguesContainer.js";

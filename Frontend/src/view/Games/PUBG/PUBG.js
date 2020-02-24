@@ -7,7 +7,7 @@ import Config from "../../../Controller/config.js";
 import _PUBG from "../../../Controller/PUBG.js";
 
 // images
-import BannerImg from "../../images/home/pubg.jpg";
+import BannerImg from "../../images/home/pubg_esportsearnings.jpg";
 
 // views
 import LeaguesContainer from "../LeaguesContainer.js";
