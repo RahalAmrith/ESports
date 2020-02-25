@@ -34,7 +34,7 @@ class Env {
 
   async callAPI(uri, params) {
     console.log("calling apis");
-    
+
     var _response = [];
     var requestBody = {
       apiuri: uri
@@ -53,8 +53,6 @@ class Env {
       requestBody
     )
       .then(async response => {
-        console.log(response);
-        
         _response = response.data;
       })
       .catch(async error => {
@@ -72,8 +70,6 @@ class Env {
 const _env = new Env();
 
 export default _env;
-
-
 
 // ==================================================
 

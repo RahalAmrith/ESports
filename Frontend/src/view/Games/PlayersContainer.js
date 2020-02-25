@@ -56,7 +56,6 @@ class PlayersContainer extends Component {
               {data.current_team === null ? "N/A" : data.current_team.slug}
             </td>
             <td>{data.role || "-"}</td>
-            //{" "}
           {/* </tr> */}
         </Link>
       );

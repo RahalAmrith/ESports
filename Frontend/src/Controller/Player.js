@@ -1,19 +1,26 @@
 import Config from "./config.js";
 
 class Player {
-    constructor(){
-        this.apis = {
-            getPlayerData: "/players/",
-          };
-    }
+  constructor() {
+    this.apis = {
+      getPlayerData: "/players/"
+    };
+  }
 
-    async getPlayerData(pID){
-        var _playerData = {};
+  async getPlayerData(pID) {
+    var _playerData = {};
 
-        _playerData = await Config.callAPI(this.apis.getPlayerData + pID);
-    
-        return _playerData;
-    }
+    _playerData = await Config.callAPI(this.apis.getPlayerData + pID);
+
+    return _playerData;
+  }
+  async getPlayersList() {
+    var _playerData = {};
+
+    _playerData = await Config.callAPI(this.apis.getPlayerData);
+
+    return _playerData;
+  }
 }
 
 const _player = new Player();

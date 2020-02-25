@@ -1,20 +1,22 @@
-.home_title{
-  color: #FFFFFF;
+.home_title {
+  color: #ffffff;
   text-align: center;
   margin-bottom: 50px;
 }
 .home_banner_back {
-  min-height: 263px;
-  max-height: 263px;
   overflow: hidden;
+  height: 400px;
 }
 .home_banner {
   width: 100%;
-  height: 263px;
-  object-fit: fill;
+  object-fit: contain;
   object-position: top;
   transition-duration: 0.5s;
   float: left;
+  position: relative;
+  top: 0px;
+  height: 400px;
+  transform: translateY(400px);
 }
 
 .home_header {
@@ -38,20 +40,40 @@
 }
 
 .home_container {
-  text-align: left;
+  width: 100%;
   color: #ffffff;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-bottom: 75px;
-  padding: 0px;
+  text-align: center;
+  background-color: #00000055;
+  border-radius: 5px;
+  min-height: 400px;
+  padding: 15px 15px;
+  margin-bottom: 25px;
 }
 
 .home_container h1 {
   font-size: 25px;
   margin-bottom: 15px;
+  font-family: cursive;
+}
+
+.home_container h5 {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-family: cursive;
 }
 
 .home_container hr {
   margin-top: 8px;
   border-color: #ffffff;
+}
+
+.homeAdvertiesment {
+  background-color: #9b9b9b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  text-align: center;
+  color: rgb(199, 199, 199);
 }
