@@ -4,10 +4,10 @@ import React, { Component } from "react";
 import Config from "../../../Controller/config.js";
 
 // controllers
-import _CSGO from "../../../Controller/CSGO";
+import _CSGO from "../../../Controller/CSGO.js";
 
 // images
-import BannerImg from "../../images/home/csgo_esportsearnings.jpg";
+import BannerImg from "../../images/home/csgo.jpg";
 
 // views
 import LeaguesContainer from "../LeaguesContainer.js";

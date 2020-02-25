@@ -12,17 +12,13 @@ class gameCard extends Component {
 
   render() {
     return (
-      <div className="col-md-2">
+      <div className="col-md-4">
         <Link to={this.props.link}>
           <div
             className="home_game_card"
             style={{ backgroundImage: 'url("' + this.props.img + '")' }}
           >
-            <div
-              className="home_game_card_content"
-              onMouseOver={() => this.props.setBanner(this.props.bannerNum)}
-              onMouseLeave={() => this.props.setBanner(0)}
-            >
+            <div className="home_game_card_content">
               <h1>{this.props.title}</h1>
             </div>
           </div>

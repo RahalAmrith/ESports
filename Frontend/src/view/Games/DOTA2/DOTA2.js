@@ -7,7 +7,7 @@ import Config from "../../../Controller/config.js";
 import _DOTA2 from "../../../Controller/DOTA2.js";
 
 // images
-import BannerImg from "../../images/home/dota2_esports_earnings.jpg";
+import BannerImg from "../../images/home/dota2.jpg";
 
 // views
 import LeaguesContainer from "../LeaguesContainer.js";

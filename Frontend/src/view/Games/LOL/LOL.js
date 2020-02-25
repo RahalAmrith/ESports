@@ -7,7 +7,7 @@ import Config from "../../../Controller/config.js";
 import _PUBG from "../../../Controller/LOL.js";
 
 // images
-import BannerImg from "../../images/home/leagueoflegends_esportsearnings.jpg";
+import BannerImg from "../../images/home/lol.jpg";
 
 // views
 import LeaguesContainer from "../LeaguesContainer.js";

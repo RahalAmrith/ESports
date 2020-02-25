@@ -18,11 +18,10 @@ class NavBar extends Component {
         {/* <div className="container"> */}
         {/* Bootstrap Nav Bar */}
 
-        <a className="es_navbar-logo" href="/">
-          <img alt="logo" src={Logo} />
-        </a>
-
         <nav className="navbar navbar-expand-md navbar-dark">
+          <a className="es_navbar-logo" href="/">
+            <img alt="logo" src={Logo} />
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -47,11 +46,6 @@ class NavBar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/blog">
                   Blog
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/forum">
-                  Forum
                 </Link>
               </li>
 
