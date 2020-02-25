@@ -4,11 +4,12 @@ import Slider from "react-slick";
 import "../assets/home/home.css";
 
 // images
-import PUBG from "../images/home/pubg.jpg";
-import DOTA2 from "../images/home/dota2.jpg";
-import CSGO from "../images/home/csgo.jpg";
-import OverWatch from "../images/home/overwatch.jpg";
-import LOL from "../images/home/lol.jpg";
+import ALl from "../images/home/Home banner All.jpg";
+import PUBG from "../images/home/pubg_esportsearnings.jpg";
+import DOTA2 from "../images/home/dota2_esports_earnings.jpg";
+import CSGO from "../images/home/csgo_esportsearnings.jpg";
+import OverWatch from "../images/home/overwatch_esportsearnings.jpg";
+import LOL from "../images/home/leagueoflegends_esportsearnings.jpg";
 
 // Components
 import GameCard from "./gameCard.js";
@@ -26,7 +27,9 @@ class Home extends Component {
     super();
     this.state = {
       recentTournemants: [],
-      recentPostList : []
+      recentPostList: [],
+      bannerImgs: [ALl, DOTA2, CSGO, OverWatch, LOL, PUBG],
+      currentBannerImg: 0
     };
   }
 
@@ -60,10 +63,15 @@ class Home extends Component {
     var _recentPosts = await Blog.getPostList();
 
     console.log(_recentPosts);
-    
 
     await this.setState({
       recentPostList: _recentPosts
+    });
+  }
+
+  setBannerImage(num) {
+    this.setState({
+      currentBannerImg: num
     });
   }
 
@@ -72,7 +80,10 @@ class Home extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: this.state.recentPostList.length > 4 ? 4 : this.state.recentPostList.length,
+      slidesToShow:
+        this.state.recentPostList.length > 4
+          ? 4
+          : this.state.recentPostList.length,
       slidesToScroll: 4,
       responsive: [
         {
@@ -107,15 +118,111 @@ class Home extends Component {
     });
     return (
       <div className="container-fluid">
+        <div className="container home_title">
+          <h1>Top 5 E-sports earning Games</h1>
+        </div>
+        <div className="container home_banner_back">
+          <img
+            className="home_banner"
+            src={this.state.bannerImgs[0]}
+            style={
+              this.state.currentBannerImg === 0
+                ? { opacity: 1, width: "100%" }
+                : { opacity: 1, width: "0%" }
+            }
+            alt="WorlEsports Earnnings Games"
+          />
+          <img
+            className="home_banner"
+            src={this.state.bannerImgs[1]}
+            style={
+              this.state.currentBannerImg === 1
+                ? { opacity: 1, width: "100%" }
+                : { opacity: 1, width: "0%" }
+            }
+            alt="WorlEsports Earnnings Games"
+          />
+          <img
+            className="home_banner"
+            src={this.state.bannerImgs[2]}
+            style={
+              this.state.currentBannerImg === 2
+                ? { opacity: 1, width: "100%" }
+                : { opacity: 1, width: "0%" }
+            }
+            alt="WorlEsports Earnnings Games"
+          />
+          <img
+            className="home_banner"
+            src={this.state.bannerImgs[3]}
+            style={
+              this.state.currentBannerImg === 3
+                ? { opacity: 1, width: "100%" }
+                : { opacity: 1, width: "0%" }
+            }
+            alt="WorlEsports Earnnings Games"
+          />
+          <img
+            className="home_banner"
+            src={this.state.bannerImgs[4]}
+            style={
+              this.state.currentBannerImg === 4
+                ? { opacity: 1, width: "100%" }
+                : { opacity: 1, width: "0%" }
+            }
+            alt="WorlEsports Earnnings Games"
+          />
+          <img
+            className="home_banner"
+            src={this.state.bannerImgs[5]}
+            style={
+              this.state.currentBannerImg === 5
+                ? { opacity: 1, width: "100%" }
+                : { opacity: 1, width: "0%" }
+            }
+            alt="WorlEsports Earnnings Games"
+          />
+        </div>
+
         {/* Games */}
         <div className="container home_container row">
-          <GameCard img={LOL} title="LOL" link="/games/lol" />
-          <GameCard img={DOTA2} title="DOTA 2" link="/games/dota2" />
-          <GameCard img={OverWatch} title="OVERWATCH" link="/games/overwatch" />
-          <div className="col-sm-2"></div>
-          <GameCard img={CSGO} title="CS:GO" link="games/csgo" />
-          <GameCard img={PUBG} title="PUBG" link="/games/pubg" />
-          <div className="col-sm-2"></div>
+          <div className="col-md-1"></div>
+          <GameCard
+            bannerNum={1}
+            setBanner={this.setBannerImage.bind(this)}
+            img={LOL}
+            title="LOL"
+            link="/games/lol"
+          />
+          <GameCard
+            bannerNum={2}
+            setBanner={this.setBannerImage.bind(this)}
+            img={DOTA2}
+            title="DOTA 2"
+            link="/games/dota2"
+          />
+          <GameCard
+            bannerNum={3}
+            setBanner={this.setBannerImage.bind(this)}
+            img={OverWatch}
+            title="OVERWATCH"
+            link="/games/overwatch"
+          />
+          <GameCard
+            bannerNum={4}
+            setBanner={this.setBannerImage.bind(this)}
+            img={CSGO}
+            title="CS:GO"
+            link="games/csgo"
+          />
+          <GameCard
+            bannerNum={5}
+            setBanner={this.setBannerImage.bind(this)}
+            img={PUBG}
+            title="PUBG"
+            link="/games/pubg"
+          />
+          <div className="col-md-1"></div>
         </div>
 
         <div className="container home_header">
