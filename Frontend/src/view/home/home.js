@@ -159,7 +159,7 @@ class Home extends Component {
                 style={
                   this.state.currentBannerImg === 0
                     ? { opacity: 1, transform: "translateY(0px)" }
-                    : { opacity: 1, transform: "translateY(0px)" }
+                    : { opacity: 0, transform: "translateY(-20.23vw)" }
                 }
                 alt="WorlEsports Earnnings Games"
               />
@@ -168,8 +168,8 @@ class Home extends Component {
                 src={this.state.bannerImgs[1]}
                 style={
                   this.state.currentBannerImg === 1
-                    ? { opacity: 1, transform: "translateY(-400px)" }
-                    : { opacity: 0, transform: "translateY(0px)" }
+                    ? { opacity: 1, transform: "translateY(-20.23vw)" }
+                    : { opacity: 1, transform: "translateY(0px)" }
                 }
                 alt="WorlEsports Earnnings Games"
               />
@@ -178,8 +178,8 @@ class Home extends Component {
                 src={this.state.bannerImgs[2]}
                 style={
                   this.state.currentBannerImg === 2
-                    ? { opacity: 1, transform: "translateY(-800px)" }
-                    : { opacity: 0, transform: "translateY(-400px)" }
+                    ? { opacity: 1, transform: "translateY(-40.47vw)" }
+                    : { opacity: 0, transform: "translateY(-20.23vw)" }
                 }
                 alt="WorlEsports Earnnings Games"
               />
@@ -188,8 +188,8 @@ class Home extends Component {
                 src={this.state.bannerImgs[3]}
                 style={
                   this.state.currentBannerImg === 3
-                    ? { opacity: 1, transform: "translateY(-1200px)" }
-                    : { opacity: 0, transform: "translateY(-800px)" }
+                    ? { opacity: 1, transform: "translateY(-60.71vw)" }
+                    : { opacity: 0, transform: "translateY(-40.47vw)" }
                 }
                 alt="WorlEsports Earnnings Games"
               />
@@ -198,8 +198,8 @@ class Home extends Component {
                 src={this.state.bannerImgs[4]}
                 style={
                   this.state.currentBannerImg === 4
-                    ? { opacity: 1, transform: "translateY(-1600px)" }
-                    : { opacity: 0, transform: "translateY(-1200px)" }
+                    ? { opacity: 1, transform: "translateY(-80.94vw)" }
+                    : { opacity: 0, transform: "translateY(-60.71vw)" }
                 }
                 alt="WorlEsports Earnnings Games"
               />
@@ -208,8 +208,8 @@ class Home extends Component {
                 src={this.state.bannerImgs[5]}
                 style={
                   this.state.currentBannerImg === 5
-                    ? { opacity: 1, transform: "translateY(-2000px)" }
-                    : { opacity: 0, transform: "translateY(-1600px)" }
+                    ? { opacity: 1, transform: "translateY(-101.18vw)" }
+                    : { opacity: 0, transform: "translateY(-80.94vw)" }
                 }
                 alt="WorlEsports Earnnings Games"
               />
