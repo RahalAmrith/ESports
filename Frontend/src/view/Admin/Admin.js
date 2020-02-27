@@ -25,6 +25,13 @@ class Admin extends Component {
               </div>
             </Link>
           </div>
+          <div className="col-12 col-lg-4 col-sm-6">
+            <Link to="/players/update">
+              <div className="admin_linkCard">
+                <h1>Update Players</h1>
+              </div>
+            </Link>
+          </div>
 
           <div className="col-12 col-lg-4 col-sm-6">
             <Link to="/admin/blog">

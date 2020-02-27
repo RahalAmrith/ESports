@@ -19,6 +19,7 @@ import Player from "./view/Player/Player.js";
 import BlogPost from "./view/Blog/BlogPost.js";
 import Admin from "./view/Admin/Admin.js";
 import Admin_Blog from "./view/Admin/Blog/Admin.Blog.js";
+import UpdatePlayers from "./view/Admin/Players/UpdatePlayers.js";
 
 class App extends Component {
   constructor() {
@@ -112,6 +113,13 @@ class App extends Component {
               strict
               // component={Landing}
               render={props => <Admin_Blog {...props} />}
+            />
+            <Route
+              path="/players/update"
+              exact
+              strict
+              // component={Landing}
+              render={props => <UpdatePlayers {...props} />}
             />
           </Switch>
           <Footer />

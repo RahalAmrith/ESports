@@ -24,3 +24,22 @@ alter table blog rename column "content" to "description";
 alter table blog add column "content" varchar;
 
 delete from blog where rid = 16
+
+
+create table public.players (
+	pid character varying NOT NULL,
+	player_name character varying,
+	country character varying,
+	total_earning float,
+	game character varying,
+	game_earning float
+);
+
+ALTER TABLE ONLY public.players ADD CONSTRAINT players_pk PRIMARY KEY (pid);
+
+insert into public.players(pid, "player_name", "country", total_earning, game, game_earning ) 
+values('3304-n0tail-johan-sundstein', 'Johan Sundstein', 'DK', 6890591.79, 'Dota 2', 6882440.18);
+
+UPDATE public.players
+	set "player_name"='newName', "country"='LK', total_earning=50000.00, game='Dota2',game_earning=6890591
+	WHERE pid='3304-n0tail-johan-sundstein';
