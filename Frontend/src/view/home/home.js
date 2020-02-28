@@ -55,6 +55,9 @@ class Home extends Component {
       topPlayers: _playersList
     });
 
+    console.table([..._playersList]);
+    
+
     // get recent tournemants
     var _tournemantsList = await _Tournemants.getRecentTournemants();
 
@@ -132,7 +135,8 @@ class Home extends Component {
       return <PostCard key={i} data={data} />;
     });
 
-    const topPlayersList = this.state.topPlayers.slice(0, 15).map((data, i) => {
+    const topPlayersList = this.state.topPlayers.slice(0, 25).map((data, i) => {
+
       return (
         <h5>
           {data.name}

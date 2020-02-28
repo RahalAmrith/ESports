@@ -23,6 +23,7 @@ class UpdatePlayers extends Component {
       "body > div.center_wrapper > div > main > div.detail_box_smooth > article > div > table > tbody"
     ).children;
 
+
     await Array.from(playersRawData).map(async (data, i) => {
       if (i !== 0) {
         await playersDataTable.push({
