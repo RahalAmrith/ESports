@@ -37,9 +37,11 @@ create table public.players (
 
 ALTER TABLE ONLY public.players ADD CONSTRAINT players_pk PRIMARY KEY (pid);
 
-insert into public.players(pid, "player_name", "country", total_earning, game, game_earning ) 
-values('3304-n0tail-johan-sundstein', 'Johan Sundstein', 'DK', 6890591.79, 'Dota 2', 6882440.18);
+insert into public.players(pid, "player_name", "fullname", "country", total_earning, game, game_earning ) 
+values('3304-n0tail-johan-sundstein', 'n0tail', 'Johan Sundstein', 'DK', 6890591.79, 'Dota 2', 6882440.18);
 
 UPDATE public.players
-	set "player_name"='newName', "country"='LK', total_earning=50000.00, game='Dota2',game_earning=6890591
+	set "player_name"='newName', "fullname"='newFullname', "country"='LK', total_earning=50000.00, game='Dota2',game_earning=6890591
 	WHERE pid='3304-n0tail-johan-sundstein';
+
+select * FROM players ORDER BY total_earning desc limit 1;
