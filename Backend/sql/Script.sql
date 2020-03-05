@@ -44,4 +44,4 @@ UPDATE public.players
 	set "player_name"='newName', "fullname"='newFullname', "country"='LK', total_earning=50000.00, game='Dota2',game_earning=6890591
 	WHERE pid='3304-n0tail-johan-sundstein';
 
-select * FROM players ORDER BY total_earning desc limit 1;
+select * FROM players ORDER BY total_earning desc limit 10;
