@@ -49,7 +49,7 @@ class Home extends Component {
 
   async UNSAFE_componentWillMount() {
     // get Players
-    var _playersList = await _Players.getPlayersList();
+    var _playersList = await _Players.DB_list(18);    
 
     await this.setState({
       topPlayers: _playersList
@@ -139,21 +139,21 @@ class Home extends Component {
 
       return (
         <h5>
-          {data.name}
-          <span style={{ float: "right" }}>{data.nationality}</span>
+          {data.player_name}
+          <span style={{ float: "right", color : "#00ff00" }}>{data.total_earning} $</span>
         </h5>
       );
     });
 
     return (
       <div className="container-fluid row">
-        <div className="col-md-2">
+        <div className="col-md-3">
           <div className="home_container">
             <h1>Top Players</h1>
             {topPlayersList}
           </div>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-9">
           <div className="home_container">
             <h1>Top 5 Esports Earning Games</h1>
             <div className="home_banner_back">
@@ -262,11 +262,11 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="col-md-2">
+        {/* <div className="col-md-3">
           <div className="homeAdvertiesment">
             <h4>Contact us for advertise here</h4>
           </div>
-        </div>
+        </div> */}
 
         <div className="col-12 home_header">
           <center>
