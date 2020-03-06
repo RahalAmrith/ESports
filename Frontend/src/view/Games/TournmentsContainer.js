@@ -5,6 +5,7 @@ import "../assets/games/matchesContainer.css";
 
 // controllers
 import Game from "../../Controller/Game.js";
+import config from "../../Controller/config.js";
 
 // placeHolders
 import PlayerPlaceholder from "../images/placeholders/person.jpg";
@@ -37,6 +38,8 @@ class TournamentsContainer extends Component {
     }
 
     var _matchesList = this.props.data.slice(floor, ceil + 1).map((data, i) => {
+      var pp = config.getCurrency(data.prizepool);
+      // var pp = data.prizepool;
       return (
         <tr key={i}>
           <td>
@@ -50,7 +53,7 @@ class TournamentsContainer extends Component {
           <td>{data.serie !== undefined ? data.serie.full_name : "-"}</td>
           <td>{data.name}</td>
           <td>
-            <span style={{ color: "#00FF00" }}>{data.prizepool || "-"} </span>
+            <span style={{ color: "#00FF00" }}>{pp} </span>
           </td>
         </tr>
       );

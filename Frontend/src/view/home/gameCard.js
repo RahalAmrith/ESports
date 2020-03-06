@@ -16,11 +16,11 @@ class gameCard extends Component {
       <div className="col-md-2">
         <Link to={this.props.link}>
           <div
-            ref={ele => {
-              ele === null
-                ? console.log()
-                : (ele.style.height = ele.offsetWidth * 0.5625 + "px");
-            }}
+            // ref={ele => {
+            //   ele === null
+            //     ? console.log()
+            //     : (ele.style.height = ele.offsetWidth * 0.5625 + "px");
+            // }}
             className="home_game_card"
             style={{
               backgroundImage: 'url("' + this.props.img + '")',

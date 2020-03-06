@@ -65,6 +65,33 @@ class Env {
   getCSSImage(img) {
     return `url(${img})`;
   }
+
+  getCurrency(cur) {
+
+    console.log("==================================================================");
+    
+
+    var curString = "";
+    if (cur != null && cur != undefined) {
+      var numArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      var arr = cur.split(" ");
+
+      arr.map(subStr => {
+        console.log(numArr.indexOf(subStr.charAt(0)));
+
+        if (numArr.indexOf(subStr.charAt(0) === -1)) {
+          curString += subStr + " ";
+        } else {
+          curString += subStr.charAt(0);
+        }
+      });
+    } else {
+      curString += " - ";
+    }
+    console.log(curString);
+
+    return curString;
+  }
 }
 
 const _env = new Env();

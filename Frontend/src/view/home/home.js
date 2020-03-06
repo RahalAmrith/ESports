@@ -146,14 +146,14 @@ class Home extends Component {
     });
 
     return (
-      <div className="container-fluid row">
-        <div className="col-md-3">
+      <div className="container-fluid row mb-5">
+        <div className="col-md-3 mb-5">
           <div className="home_container">
             <h1>Top Players</h1>
             {topPlayersList}
           </div>
         </div>
-        <div className="col-md-9">
+        <div className="col-md-6 mb-5">
           <div className="home_container">
             <h1>Top 5 Esports Earning Games</h1>
             <div className="home_banner_back">
@@ -262,11 +262,11 @@ class Home extends Component {
           </div>
         </div>
 
-        {/* <div className="col-md-3">
+        <div className="col-md-3 mb-5">
           <div className="homeAdvertiesment">
             <h4>Contact us for advertise here</h4>
           </div>
-        </div> */}
+        </div>
 
         <div className="col-12 home_header">
           <center>
@@ -282,7 +282,7 @@ class Home extends Component {
         </div>
 
         {/* recent Tournemants */}
-        <div className="container home_container">
+        <div className="container home_container mb-5">
           <h1>Recent Tournemants and Prize Pools</h1>
           {/* <hr /> */}
 
@@ -290,7 +290,7 @@ class Home extends Component {
         </div>
 
         {/* Upcomming Leagus */}
-        <div className="container home_container">
+        <div className="container home_container mb-5">
           <h1>Recent Posts</h1>
           <hr />
           <Slider {...settings}>{_posts}</Slider>
