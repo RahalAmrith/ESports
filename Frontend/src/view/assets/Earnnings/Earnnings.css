@@ -1,0 +1,29 @@
+.ES_Earnings_main {
+}
+
+.ES_Earnings_container {
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  background-color: #00000055;
+  border-radius: 5px;
+  min-height: 400px;
+  padding: 15px 15px;
+  height: 100%;
+  margin-bottom: 50px;
+  overflow-x: scroll;
+}
+
+.ES_Earnings_title{
+    font-size: 25px;
+}
+
+.ES_Earnings_table {
+    color: #FFFFFF;
+}
+
+.ES_Earnings_table .flag{
+    height: 12px;
+    margin-right: 8px;
+    margin-left: 8px;
+}

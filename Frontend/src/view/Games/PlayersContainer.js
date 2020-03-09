@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 import "../assets/games/matchesContainer.css";
 
+// config
+import Config from '../../Controller/config.js'
+
 // placeHolders
 import PlayerPlaceholder from "../images/placeholders/person.jpg";
 
@@ -39,23 +42,26 @@ class PlayersContainer extends Component {
     var _matchesList = this.props.data.slice(floor, ceil + 1).map((data, i) => {
       return (
         <Link key={i} to={"/player/" + data.id}>
-          
           {/* <tr key={i}> */}
-            <th scope="row">
-              <img
-                alt=""
-                src={
-                  data.image_url === null ? PlayerPlaceholder : data.image_url
-                }
-              />
-            </th>
-            <td>{(data.first_name || "") + " " + (data.last_name || "")}</td>
-            <td>{data.name || "-"}</td>
-            <td>{data.nationality || "-"}</td>
-            <td>
-              {data.current_team === null ? "N/A" : data.current_team.slug}
-            </td>
-            <td>{data.role || "-"}</td>
+          <th scope="row">
+            <img
+              alt=""
+              src={data.image_url === null ? PlayerPlaceholder : data.image_url}
+            />
+          </th>
+          <td>{(data.first_name || "") + " " + (data.last_name || "")}</td>
+          <td>{data.name || "-"}</td>
+          <td>
+            {/* {data.nationality || "-"} */}
+            {Config.parseCountry(data.nationality).name}
+            <img
+              className="flag"
+              alt=""
+              src={Config.parseCountry(data.nationality).flag}
+            />
+          </td>
+          <td>{data.current_team === null ? "N/A" : data.current_team.slug}</td>
+          <td>{data.role || "-"}</td>
           {/* </tr> */}
         </Link>
       );

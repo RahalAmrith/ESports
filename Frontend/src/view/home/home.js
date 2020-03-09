@@ -27,6 +27,9 @@ import _Players from "../../Controller/Player.js";
 // import Matches from "../../Controller/matches.js";
 // import Game from "../../Controller/Game.js";
 import Blog from "../../Controller/Blog.js";
+import Config from "../../Controller/config.js";
+
+var numeral = require("numeral");
 
 class Home extends Component {
   constructor() {
@@ -49,14 +52,11 @@ class Home extends Component {
 
   async UNSAFE_componentWillMount() {
     // get Players
-    var _playersList = await _Players.DB_list(18);    
+    var _playersList = await _Players.DB_list(18);
 
     await this.setState({
       topPlayers: _playersList
     });
-
-    console.table([..._playersList]);
-    
 
     // get recent tournemants
     var _tournemantsList = await _Tournemants.getRecentTournemants();
@@ -136,11 +136,17 @@ class Home extends Component {
     });
 
     const topPlayersList = this.state.topPlayers.slice(0, 25).map((data, i) => {
-
       return (
-        <h5>
+        <h5 key={i}>
+          <img
+              className="flag"
+              alt=""
+              src={Config.parseCountry(data.country).flag}
+            />
           {data.player_name}
-          <span style={{ float: "right", color : "#00ff00" }}>{data.total_earning} $</span>
+          <span style={{ float: "right", color: "#00ff00" }}>
+            {numeral(data.total_earning).format("$ 0.00 a")}
+          </span>
         </h5>
       );
     });

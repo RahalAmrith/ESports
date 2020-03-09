@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 
 import "../assets/games/matchesContainer.css";
 
+// config
+import Config from '../../Controller/config.js'
+
 // placeholders
 import TeamPlaceholder from "../images/placeholders/team.png";
 
@@ -49,7 +52,14 @@ class TeamsContainer extends Component {
           </th>
           <td>{data.name}</td>
           <td>{data.acronym || "-"}</td>
-          <td>{data.location || "-"}</td>
+          <td>
+            {Config.parseCountry(data.location).name}
+            <img
+              className="flag"
+              alt=""
+              src={Config.parseCountry(data.location).flag}
+            />
+          </td>
           {/* </tr> */}
         </Link>
       );

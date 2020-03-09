@@ -8,17 +8,23 @@ import "./App.css";
 import NawBar from "./view/common/navbar.js";
 import Home from "./view/home/home";
 import Footer from "./view/common/footer.js";
+// games
 import PUBG from "./view/Games/PUBG/PUBG.js";
 import LOL from "./view/Games/LOL/LOL.js";
 import DOTA2 from "./view/Games/DOTA2/DOTA2.js";
-import Overwatch from "./view/Games/Overwatch/Overwatch.js";
-import Team from "./view/Team/Team.js";
-import _LOL from "./Controller/LOL";
 import CSGO from "./view/Games/CSGO/CSGO.js";
+import Overwatch from "./view/Games/Overwatch/Overwatch.js";
+
+// common
+import Team from "./view/Team/Team.js";
 import Player from "./view/Player/Player.js";
 import BlogPost from "./view/Blog/BlogPost.js";
+
+import Earnings from './view/Earnnings/Earnnings.js'
+
+// admin components
 import Admin from "./view/Admin/Admin.js";
-import Admin_Blog from "./view/Admin/Blog/Admin.Blog.js";
+import AdminBlog from "./view/Admin/Blog/Admin.Blog.js";
 import UpdatePlayers from "./view/Admin/Players/UpdatePlayers.js";
 
 class App extends Component {
@@ -80,6 +86,13 @@ class App extends Component {
               render={props => <CSGO {...props} />}
             />
             <Route
+              path="/earnings"
+              exact
+              strict
+              // component={Landing}
+              render={props => <Earnings {...props} />}
+            />
+            <Route
               path="/team/:id"
               exact
               strict
@@ -112,7 +125,7 @@ class App extends Component {
               exact
               strict
               // component={Landing}
-              render={props => <Admin_Blog {...props} />}
+              render={props => <AdminBlog {...props} />}
             />
             <Route
               path="/players/update"

@@ -25,6 +25,8 @@ class Env {
         // Authorization: "Bearer " + this.authToken
       }
     };
+
+    this.countryList = require("./Resources/countryList.json");
   }
 
   getHost() {
@@ -33,8 +35,6 @@ class Env {
   }
 
   async callAPI(uri, params) {
-    console.log("calling apis");
-
     var _response = [];
     var requestBody = {
       apiuri: uri
@@ -67,30 +67,42 @@ class Env {
   }
 
   getCurrency(cur) {
-
-    console.log("==================================================================");
-    
-
     var curString = "";
     if (cur != null && cur != undefined) {
-      var numArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+      var numArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
       var arr = cur.split(" ");
 
       arr.map(subStr => {
-        console.log(numArr.indexOf(subStr.charAt(0)));
-
-        if (numArr.indexOf(subStr.charAt(0) === -1)) {
-          curString += subStr + " ";
-        } else {
+        if (numArr.indexOf(subStr.charAt(0)) === -1) {
           curString += subStr.charAt(0);
+        } else {
+          curString += subStr + " ";
         }
       });
     } else {
       curString += " - ";
     }
-    console.log(curString);
-
     return curString;
+  }
+
+  parseCountry(code) {
+    var country = {
+      name: code,
+      flag: null
+    };
+
+    if (code === null || code === undefined) {
+      return country;
+    } else {
+      this.countryList.map(data => {
+        if (data.id.toLowerCase() === code.toLowerCase()) {
+          country.name = data.value;
+          country.flag = require(`./Resources/flags/${code.toLowerCase()}.svg`);
+        }
+      });
+
+      return country;
+    }
   }
 }
 

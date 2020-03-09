@@ -8,7 +8,7 @@ import Game from "../../Controller/Game.js";
 import config from "../../Controller/config.js";
 
 // placeHolders
-import PlayerPlaceholder from "../images/placeholders/person.jpg";
+// import PlayerPlaceholder from "../images/placeholders/person.jpg";
 
 // spinners
 import TableSpinner from "../images/common/tableSpinner.svg";

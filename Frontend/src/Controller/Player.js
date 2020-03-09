@@ -30,7 +30,6 @@ class Player {
   async DB_add(data) {
     await Axios.post(`${Config.host}${Config.port}${this.apis.DB_add}`, data)
       .then(async response => {
-        console.log(response.data);
       })
       .catch(async error => {
         console.error(error);
@@ -46,7 +45,6 @@ class Player {
       reqData
     )
       .then(async response => {
-        console.log(response.data);
         list = response.data;
       })
       .catch(async error => {

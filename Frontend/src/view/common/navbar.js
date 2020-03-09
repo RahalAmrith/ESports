@@ -40,8 +40,8 @@ class NavBar extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/earnnings">
-                  Earnnings
+                <Link className="nav-link" to="/earnings">
+                  Earnings
                 </Link>
               </li>
               <li className="nav-item">

@@ -28,12 +28,12 @@
 }
 
 .home_header h1 {
-  font-family: "Almendra SC";
+  /* font-family: "Roboto"; */
   font-size: 50px;
 }
 
 .home_header p {
-  font-family: "Almendra SC";
+  /* font-family: "Roboto"; */
   font-size: 18px;
   max-width: 500px;
   margin-top: 50px;
@@ -53,14 +53,14 @@
 .home_container h1 {
   font-size: 25px;
   margin-bottom: 15px;
-  font-family: cursive;
+  /* font-family: "Roboto"; */
 }
 
 .home_container h5 {
   text-align: left;
   font-size: 14px;
   margin-bottom: 15px;
-  font-family: cursive;
+  /* font-family: "Roboto"; */
   margin-bottom: 5px;
 }
 
