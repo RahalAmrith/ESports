@@ -50,7 +50,8 @@
   /* max-width: 678px; */
   width: 100%;
   align-items: center;
-  display: block;
+  justify-content: center;
+  display: flex;
 }
 
 .pagination_bar {
