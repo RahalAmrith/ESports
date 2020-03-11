@@ -65,8 +65,11 @@ class NavBar extends Component {
                   Games
                 </a>
                 <div className="dropdown-menu">
-                  <Link className="dropdown-item" to="/games/lol">
-                    League of Legends
+                  <Link className="dropdown-item" to="/games/pubg">
+                    PUBG
+                  </Link>
+                  <Link className="dropdown-item" to="/games/csgo">
+                    CS:GO
                   </Link>
                   <Link className="dropdown-item" to="/games/dota2">
                     Dota 2
@@ -74,11 +77,8 @@ class NavBar extends Component {
                   <Link className="dropdown-item" to="/games/overwatch">
                     Overwatch
                   </Link>
-                  <Link className="dropdown-item" to="/games/csgo">
-                    CS:GO
-                  </Link>
-                  <Link className="dropdown-item" to="/games/pubg">
-                    PUBG
+                  <Link className="dropdown-item" to="/games/lol">
+                    League of Legends
                   </Link>
                 </div>
               </li>

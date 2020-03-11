@@ -25,3 +25,8 @@ a:hover{
 button:focus{
   outline: none;
 }
+
+.removePadding{
+  padding-left: 0px;
+  padding-right: 0px;
+}

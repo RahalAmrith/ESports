@@ -1,0 +1,18 @@
+.playerInfor_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: #00000088;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+.playerInfor_item h3 {
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+}
+.playerInfor_item h1 {
+  font-size: 25px;
+}

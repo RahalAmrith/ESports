@@ -5,9 +5,14 @@ import "../assets/player/player.css";
 // controllers
 import Game from "../../Controller/Game.js";
 import _Player from "../../Controller/Player.js";
+import _Team from "../../Controller/Team.js";
+import Config from "../../Controller/config.js";
 
 // placeHolders
 import PlayerPlaceholder from "../images/placeholders/person.jpg";
+
+// containers
+import MatchesContainer from "../Games/MatchesContainer.js";
 
 // spinners
 import TableSpinner from "../images/common/tableSpinner.svg";
@@ -44,7 +49,10 @@ class Player extends Component {
       name: null,
       nationality: null,
       role: null,
-      slug: null
+      slug: null,
+
+      // matchesData
+      matchesData : []
     };
   }
 
@@ -56,9 +64,13 @@ class Player extends Component {
     console.log(playerData);
 
     this.setState({ ...playerData });
+    var matchesData = await _Team.getMatchesForTeam(this.state.current_team.id);
+    console.log(matchesData);
+    
     this.setState({
-      loading : false
-    })
+      matchesData: matchesData,
+      loading: false
+    });
   }
 
   render() {
@@ -81,25 +93,60 @@ class Player extends Component {
             </div>
             <div className="col-sm-9 Team_details">
               <h2>{this.state.name}</h2>
-
-              <ul>
-                <li>
-                  <b> Location : </b>
-                  {this.state.nationality}
-                </li>
-                <li>
-                  <b> Video Game : </b>
-                  {this.state.current_videogame.name}
-                </li>
-                <li>
-                  <img
-                    style={{ height: "60px", marginTop: "8px" }}
-                    alt={this.state.current_videogame.name}
-                    src={Game.getLogoByID(this.state.current_videogame.id)}
-                  />
-                </li>
-              </ul>
+              <h6>
+                {this.state.first_name} &nbsp; {this.state.last_name}
+              </h6>
+              <hr />
+              <div className="row"></div>
             </div>
+          </div>
+
+          <div className="container row removePadding">
+            <div className="col-sm-4">
+              <div className="playerInfor_item">
+                <h3>Video Game</h3>
+                <h1>{this.state.current_videogame.slug}</h1>
+                <img
+                  style={{ height: "60px", marginTop: "8px" }}
+                  alt={this.state.current_videogame.name}
+                  src={Game.getLogoByID(this.state.current_videogame.id)}
+                />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="playerInfor_item">
+                <h3>Location</h3>
+
+                <h1>{Config.parseCountry(this.state.nationality).name}</h1>
+                <img
+                  style={{ height: "60px", marginTop: "8px" }}
+                  alt={this.state.current_videogame.name}
+                  src={Config.parseCountry(this.state.nationality).flag}
+                />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="playerInfor_item">
+                <h3>Team</h3>
+
+                <h1>{this.state.current_team.name}</h1>
+                <img
+                  style={{ height: "60px", marginTop: "8px" }}
+                  alt={this.state.current_videogame.name}
+                  src={this.state.current_team.image_url}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="playerInfor_item container Team_players">
+            <h2>Matches Played</h2>
+            {/* <hr /> */}
+            <br />
+            <MatchesContainer
+              teamID={this.state.id}
+              data={this.state.matchesData}
+            />
           </div>
         </div>
       );
