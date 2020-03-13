@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "../assets/games/leaguesContainer.css";
 
@@ -15,12 +16,14 @@ class LeaguesContainer extends Component {
     var list = this.props.data.map((data, i) => {
       return (
         <div key={i} className="col-sm-4 col-md-3 col-lg-2 col-6">
-          <div className="LeagueCard">
-            <center>
-              <img alt="logo" src={data.image_url}></img>
-              <h5>{data.name}</h5>
-            </center>
-          </div>
+          <Link  to={`/league/${data.id}`}>
+            <div className="LeagueCard">
+              <center>
+                <img alt="logo" src={data.image_url}></img>
+                <h5>{data.name}</h5>
+              </center>
+            </div>
+          </Link>
         </div>
       );
     });

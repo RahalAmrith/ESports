@@ -18,6 +18,7 @@ import Overwatch from "./view/Games/Overwatch/Overwatch.js";
 // common
 import Team from "./view/Team/Team.js";
 import Player from "./view/Player/Player.js";
+import League from "./view/League/League.js";
 import BlogPost from "./view/Blog/BlogPost.js";
 
 import Earnings from './view/Earnnings/Earnnings.js'
@@ -91,6 +92,13 @@ class App extends Component {
               strict
               // component={Landing}
               render={props => <Earnings {...props} />}
+            />
+            <Route
+              path="/league/:id"
+              exact
+              strict
+              // component={Landing}
+              render={props => <League {...props} />}
             />
             <Route
               path="/team/:id"
