@@ -20,8 +20,9 @@ import Team from "./view/Team/Team.js";
 import Player from "./view/Player/Player.js";
 import League from "./view/League/League.js";
 import BlogPost from "./view/Blog/BlogPost.js";
+import Earnings from "./view/Earnnings/Earnnings.js";
 
-import Earnings from './view/Earnnings/Earnnings.js'
+import Sitemap from "./view/Sitemap/Sitemap.js";
 
 // admin components
 import Admin from "./view/Admin/Admin.js";
@@ -49,98 +50,105 @@ class App extends Component {
               exact
               strict
               // component={Landing}
-              render={props => <Home {...props} />}
+              render={(props) => <Home {...props} />}
             />
             <Route
               path="/games/pubg"
               exact
               strict
               // component={Landing}
-              render={props => <PUBG {...props} />}
+              render={(props) => <PUBG {...props} />}
             />
             <Route
               path="/games/lol"
               exact
               strict
               // component={Landing}
-              render={props => <LOL {...props} />}
+              render={(props) => <LOL {...props} />}
             />
             <Route
               path="/games/dota2"
               exact
               strict
               // component={Landing}
-              render={props => <DOTA2 {...props} />}
+              render={(props) => <DOTA2 {...props} />}
             />
             <Route
               path="/games/overwatch"
               exact
               strict
               // component={Landing}
-              render={props => <Overwatch {...props} />}
+              render={(props) => <Overwatch {...props} />}
             />
             <Route
               path="/games/csgo"
               exact
               strict
               // component={Landing}
-              render={props => <CSGO {...props} />}
+              render={(props) => <CSGO {...props} />}
             />
             <Route
               path="/earnings"
               exact
               strict
               // component={Landing}
-              render={props => <Earnings {...props} />}
+              render={(props) => <Earnings {...props} />}
             />
             <Route
               path="/league/:id"
               exact
               strict
               // component={Landing}
-              render={props => <League {...props} />}
+              render={(props) => <League {...props} />}
             />
             <Route
               path="/team/:id"
               exact
               strict
               // component={Landing}
-              render={props => <Team {...props} />}
+              render={(props) => <Team {...props} />}
             />
             <Route
               path="/player/:id"
               exact
               strict
               // component={Landing}
-              render={props => <Player {...props} />}
+              render={(props) => <Player {...props} />}
             />
             <Route
               path="/blog/post/:id"
               exact
               strict
               // component={Landing}
-              render={props => <BlogPost {...props} />}
+              render={(props) => <BlogPost {...props} />}
             />
             <Route
               path="/admin"
               strict
               exact
               // component={Landing}
-              render={props => <Admin {...props} />}
+              render={(props) => <Admin {...props} />}
             />
             <Route
               path="/admin/Blog"
               exact
               strict
               // component={Landing}
-              render={props => <AdminBlog {...props} />}
+              render={(props) => <AdminBlog {...props} />}
             />
             <Route
               path="/players/update"
               exact
               strict
               // component={Landing}
-              render={props => <UpdatePlayers {...props} />}
+              render={(props) => <UpdatePlayers {...props} />}
+            />
+            <Route
+              path="/sitemap"
+              exact
+              strict
+              // component={Landing}
+              render={(props) => <Sitemap {...props} />}
             />
           </Switch>
           <Footer />
