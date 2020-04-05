@@ -140,7 +140,7 @@ class Home extends Component {
         <h5 key={i}>
           <img
               className="flag"
-              alt=""
+              title="" alt="Esports earnings  "
               src={Config.parseCountry(data.country).flag}
             />
           {data.player_name}
@@ -171,7 +171,7 @@ class Home extends Component {
                     ? { opacity: 1, transform: "translateY(0px)" }
                     : { opacity: 0, transform: "translateY(-20.23vw)" }
                 }
-                alt="WorlEsports Earnnings Games"
+                title="" alt="Esports earnings  WorlEsports Earnnings Games"
               />
               <img
                 className="home_banner"
@@ -181,7 +181,7 @@ class Home extends Component {
                     ? { opacity: 1, transform: "translateY(-20.23vw)" }
                     : { opacity: 1, transform: "translateY(0px)" }
                 }
-                alt="WorlEsports Earnnings Games"
+                title="" alt="Esports earnings  WorlEsports Earnnings Games"
               />
               <img
                 className="home_banner"
@@ -191,7 +191,7 @@ class Home extends Component {
                     ? { opacity: 1, transform: "translateY(-40.47vw)" }
                     : { opacity: 0, transform: "translateY(-20.23vw)" }
                 }
-                alt="WorlEsports Earnnings Games"
+                title="" alt="Esports earnings  WorlEsports Earnnings Games"
               />
               <img
                 className="home_banner"
@@ -201,7 +201,7 @@ class Home extends Component {
                     ? { opacity: 1, transform: "translateY(-60.71vw)" }
                     : { opacity: 0, transform: "translateY(-40.47vw)" }
                 }
-                alt="WorlEsports Earnnings Games"
+                title="" alt="Esports earnings  WorlEsports Earnnings Games"
               />
               <img
                 className="home_banner"
@@ -211,7 +211,7 @@ class Home extends Component {
                     ? { opacity: 1, transform: "translateY(-80.94vw)" }
                     : { opacity: 0, transform: "translateY(-60.71vw)" }
                 }
-                alt="WorlEsports Earnnings Games"
+                title="" alt="Esports earnings  WorlEsports Earnnings Games"
               />
               <img
                 className="home_banner"
@@ -221,7 +221,7 @@ class Home extends Component {
                     ? { opacity: 1, transform: "translateY(-101.18vw)" }
                     : { opacity: 0, transform: "translateY(-80.94vw)" }
                 }
-                alt="WorlEsports Earnnings Games"
+                title="" alt="Esports earnings  WorlEsports Earnnings Games"
               />
             </div>
 

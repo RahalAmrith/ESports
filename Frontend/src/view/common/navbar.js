@@ -19,7 +19,7 @@ class NavBar extends Component {
         {/* Bootstrap Nav Bar */}
 
         <a className="es_navbar-logo" href="/">
-          <img alt="logo" src={Logo} />
+          <img title="" alt="Esports earnings  LOGO" src={Logo} />
         </a>
 
         <nav className="navbar navbar-expand-md navbar-dark">
@@ -42,16 +42,6 @@ class NavBar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/earnings">
                   Earnings
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/blog">
-                  Blog
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/forum">
-                  Forum
                 </Link>
               </li>
 
@@ -81,6 +71,16 @@ class NavBar extends Component {
                     League of Legends
                   </Link>
                 </div>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/blog">
+                  Blog
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/forum">
+                  Forum
+                </Link>
               </li>
             </ul>
           </div>

@@ -93,7 +93,7 @@ class Admin_Blog extends Component {
                 }}
               />
               {this.state.ap_imgUrl !== null ? (
-                <img alt="" src={this.state.ap_imgUrl} />
+                <img title="" alt="Esports earnings  " src={this.state.ap_imgUrl} />
               ) : null}
             </div>
 

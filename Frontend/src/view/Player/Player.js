@@ -75,7 +75,7 @@ class Player extends Component {
 
   render() {
     if (this.state.loading) {
-      return <img className="tableSpinner" alt="" src={TableSpinner} />;
+      return <img className="tableSpinner" title="" alt="Esports earnings  " src={TableSpinner} />;
     } else {
       return (
         <div className="container-fluid">

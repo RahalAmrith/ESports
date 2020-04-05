@@ -44,7 +44,7 @@ class BlogPost extends Component {
 
           {/* Image */}
           <div className="col-12 bp_container bp_img">
-            <img alt="" src={this.state.img}></img>
+            <img title="" alt="Esports earnings  " src={this.state.img}></img>
           </div>
 
           {/* Content */}

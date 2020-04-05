@@ -19,7 +19,7 @@ class LeaguesContainer extends Component {
           <Link  to={`/league/${data.id}`}>
             <div className="LeagueCard">
               <center>
-                <img alt="logo" src={data.image_url}></img>
+                <img title="" alt="Esports earnings  logo" src={data.image_url}></img>
                 <h5>{data.name}</h5>
               </center>
             </div>
@@ -30,7 +30,7 @@ class LeaguesContainer extends Component {
     return (
       <div style={this.props.style} className="container row LeaguesContainer">
         {this.props.data.length === 0 ? (
-          <img className="tableSpinner" alt="" src={TableSpinner} />
+          <img className="tableSpinner" title="" alt="Esports earnings  " src={TableSpinner} />
         ) : null}
         {list}
       </div>

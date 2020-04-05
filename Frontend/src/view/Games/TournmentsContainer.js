@@ -75,7 +75,7 @@ class TournamentsContainer extends Component {
               <tr>
                 <td colSpan="6">
                   <center>
-                    <img className="tableSpinner" alt="" src={TableSpinner} />
+                    <img className="tableSpinner" title="" alt="Esports earnings  " src={TableSpinner} />
                   </center>
                 </td>
               </tr>

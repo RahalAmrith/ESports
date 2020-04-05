@@ -45,7 +45,7 @@ class PlayersContainer extends Component {
           {/* <tr key={i}> */}
           <th scope="row">
             <img
-              alt=""
+              title="" alt="Esports earnings  "
               src={data.image_url === null ? PlayerPlaceholder : data.image_url}
             />
           </th>
@@ -56,7 +56,7 @@ class PlayersContainer extends Component {
             {Config.parseCountry(data.nationality).name}
             <img
               className="flag"
-              alt=""
+              title="" alt="Esports earnings  "
               src={Config.parseCountry(data.nationality).flag}
             />
           </td>
@@ -84,7 +84,7 @@ class PlayersContainer extends Component {
               <tr>
                 <td colSpan="6">
                   <center>
-                    <img className="tableSpinner" alt="" src={TableSpinner} />
+                    <img className="tableSpinner" title="" alt="Esports earnings  " src={TableSpinner} />
                   </center>
                 </td>
               </tr>

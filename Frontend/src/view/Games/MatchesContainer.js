@@ -31,7 +31,7 @@ class MatchesContainer extends Component {
       return (
         <tr key={i}>
           <th scope="row">
-            <img alt="leagueLogo" src={data.league.image_url} />
+            <img title="" alt="Esports earnings  leagueLogo" src={data.league.image_url} />
           </th>
           <td>{data.serie.slug}</td>
           <td>{data.tournament.name}</td>

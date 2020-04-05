@@ -42,7 +42,7 @@ class Earnnings extends Component {
             {Config.parseCountry(data.country).name}
             <img
               className="flag"
-              alt=""
+              title="" alt="Esports earnings  Country"
               src={Config.parseCountry(data.country).flag}
             />
           </td>

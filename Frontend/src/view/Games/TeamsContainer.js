@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "../assets/games/matchesContainer.css";
 
 // config
-import Config from '../../Controller/config.js'
+import Config from "../../Controller/config.js";
 
 // placeholders
 import TeamPlaceholder from "../images/placeholders/team.png";
@@ -20,13 +20,13 @@ class TeamsContainer extends Component {
   constructor() {
     super();
     this.state = {
-      pageNum: 1
+      pageNum: 1,
     };
   }
 
   handlePaging(pgno) {
     this.setState({
-      pageNum: pgno
+      pageNum: pgno,
     });
   }
 
@@ -46,7 +46,8 @@ class TeamsContainer extends Component {
           {/* <tr key={i}> */}
           <th scope="row">
             <img
-              alt=""
+              title={data.name}
+              alt="Esports earnings  "
               src={data.image_url === null ? TeamPlaceholder : data.image_url}
             />
           </th>
@@ -56,7 +57,8 @@ class TeamsContainer extends Component {
             {Config.parseCountry(data.location).name}
             <img
               className="flag"
-              alt=""
+              title={Config.parseCountry(data.location).name}
+              alt="Esports earnings Country"
               src={Config.parseCountry(data.location).flag}
             />
           </td>
@@ -80,7 +82,12 @@ class TeamsContainer extends Component {
               <tr>
                 <td colSpan="6">
                   <center>
-                    <img className="tableSpinner" alt="" src={TableSpinner} />
+                    <img
+                      className="tableSpinner"
+                      title=""
+                      alt="Esports earnings  "
+                      src={TableSpinner}
+                    />
                   </center>
                 </td>
               </tr>
@@ -100,7 +107,7 @@ class TeamsContainer extends Component {
               itemClass="page-item"
               linkClass="page-link"
               innerClass="pagination_bar"
-              onChange={pgno => this.handlePaging(pgno)}
+              onChange={(pgno) => this.handlePaging(pgno)}
             />
             {/* </div> */}
           </center>
