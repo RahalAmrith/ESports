@@ -1,0 +1,18 @@
+.blog_main {
+  background-color: #00000088;
+  margin-bottom: 50px;
+  padding: 35px 20px;
+  border-radius: 15px;
+  color: #ffffff;
+  text-align: justify;
+}
+
+.blog_main h1 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.blog_main hr {
+  border-color: #ffffff;
+  margin-bottom: 30px;
+}

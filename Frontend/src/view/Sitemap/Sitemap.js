@@ -33,28 +33,32 @@ class Sitemap extends Component {
             </h4>
           </div>
           <div className="col-sm-4 sm_linkGroup">
-            <h2>Earnings</h2>
+            <h2><Link to="/earnings"> Earnings</Link></h2>
             <h2>Leagues</h2>
             <h2>Teams</h2>
             <h2>Players</h2>
           </div>
           <div className="col-sm-4 sm_linkGroup">
-            <h2>Blog</h2>
-            <h2>Forum</h2>
+            <h2>
+            <Link to="/blog">Blog</Link>
+            </h2>
+            <h2>
+              <Link to="/forum">Forum</Link>
+            </h2>
           </div>
           <div className="col-sm-4 sm_linkGroup">
             <h2>About Us</h2>
             <h4>
-              <Link to="/"> About Us</Link>
+              <Link to="/aboutus"> About Us</Link>
             </h4>
             <h4>
-              <Link to="/"> Contact Us</Link>
+              <Link to="/contactus"> Contact Us</Link>
             </h4>
             <h4>
               <Link to="/sitemap"> Site Map</Link>
             </h4>
             <h4>
-              <Link to="/"> Terms of Service</Link>
+              <Link to="/privacypolicy"> Privacy Policy</Link>
             </h4>
           </div>
         </div>

@@ -44,6 +44,7 @@ class TournamentsContainer extends Component {
         <tr key={i}>
           <td>
             <img
+            className="gameLogo"
               alt={data.videogame.name}
               src={Game.getLogoByID(data.videogame.id)}
             />

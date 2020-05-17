@@ -45,6 +45,17 @@
   outline: none;
 }
 
+.MatchesContainer table td .gameLogo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  background-color: #ffffff00;
+  border-radius: 0%;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
 .pagination {
   padding: 30px 0px;
   /* max-width: 678px; */

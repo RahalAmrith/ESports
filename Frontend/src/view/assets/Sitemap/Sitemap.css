@@ -24,6 +24,10 @@
     margin-bottom: 15px;
 }
 
+.sm_linkGroup h2 a{
+    color: #ffffff;
+}
+
 .sm_linkGroup h4{
     margin-left: 15px;
     margin-bottom: 0px;

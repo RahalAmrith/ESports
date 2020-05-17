@@ -29,6 +29,12 @@
   color: #ffffff;
 }
 
+.es_footer h5 a {
+  margin-left: 0px;
+  /* font-size: 14px; */
+  color: #ffffff;
+}
+
 .es_footer p {
   letter-spacing: 3px;
   margin-bottom: 5px;

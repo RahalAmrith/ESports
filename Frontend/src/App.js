@@ -19,10 +19,15 @@ import Overwatch from "./view/Games/Overwatch/Overwatch.js";
 import Team from "./view/Team/Team.js";
 import Player from "./view/Player/Player.js";
 import League from "./view/League/League.js";
+import Forum from "./view/Forum/Forum.js";
+import Blog from "./view/Blog/Blog.js";
 import BlogPost from "./view/Blog/BlogPost.js";
 import Earnings from "./view/Earnnings/Earnnings.js";
 
 import Sitemap from "./view/Sitemap/Sitemap.js";
+import PrivacyPolicy from "./view/PrivacyPolicy/PrivacyPolicy.js";
+import ContactUs from "./view/ContactUs/ContactUs.js";
+import AboutUs from "./view/AboutUs/AboutUs.js";
 
 // admin components
 import Admin from "./view/Admin/Admin.js";
@@ -116,6 +121,20 @@ class App extends Component {
               render={(props) => <Player {...props} />}
             />
             <Route
+              path="/forum"
+              exact
+              strict
+              // component={Landing}
+              render={(props) => <Forum {...props} />}
+            />
+            <Route
+              path="/blog"
+              exact
+              strict
+              // component={Landing}
+              render={(props) => <Blog {...props} />}
+            />
+            <Route
               path="/blog/post/:id"
               exact
               strict
@@ -149,6 +168,27 @@ class App extends Component {
               strict
               // component={Landing}
               render={(props) => <Sitemap {...props} />}
+            />
+            <Route
+              path="/privacypolicy"
+              exact
+              strict
+              // component={Landing}
+              render={(props) => <PrivacyPolicy {...props} />}
+            />
+            <Route
+              path="/contactus"
+              exact
+              strict
+              // component={Landing}
+              render={(props) => <ContactUs {...props} />}
+            />
+            <Route
+              path="/aboutus"
+              exact
+              strict
+              // component={Landing}
+              render={(props) => <AboutUs {...props} />}
             />
           </Switch>
           <Footer />

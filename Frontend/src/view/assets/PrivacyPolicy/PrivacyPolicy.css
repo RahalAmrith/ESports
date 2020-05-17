@@ -1,0 +1,12 @@
+.pp_main {
+  background-color: #00000088;
+  margin-bottom: 50px;
+  padding: 15px 20px;
+  border-radius: 15px;
+  color: #ffffff;
+  text-align: justify;
+}
+
+.pp_main h1{
+    margin-bottom: 50px;
+}

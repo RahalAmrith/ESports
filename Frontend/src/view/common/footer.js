@@ -16,18 +16,25 @@ class Footer extends Component {
           <div className="col-sm-4">
             <h5>About Us</h5>
             <ul>
-              <li>About Us</li>
-              <li>Contact Us</li>
+              <li></li>
+              <li>
+                <Link to="/aboutus">About Us </Link>{" "}
+              </li>
+              <li>
+                <Link to="/contactus">Contact Us </Link>{" "}
+              </li>
               <li>
                 <Link to="/sitemap">Site map </Link>{" "}
               </li>
-              <li>Terms of Service</li>
+              <li>
+                <Link to="/privacypolicy">Privacy Policy</Link>{" "}
+              </li>
             </ul>
           </div>
           <div className="col-sm-4">
-            <h5>Earnings</h5>
-            <h5>Blog</h5>
-            <h5>Forum</h5>
+            <h5><Link to="/earnings">Earnings</Link></h5>
+            <h5><Link to="/blog">Blog</Link></h5>
+            <h5><Link to="/forum">Forum</Link></h5>
           </div>
           <div className="col-sm-4">
             <h5>Games</h5>

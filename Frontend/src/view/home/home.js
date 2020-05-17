@@ -162,7 +162,7 @@ class Home extends Component {
     });
 
     return (
-      <div className="container-fluid row mb-5">
+      <div className="container row mb-5">
         {/* ============================== */}
         {/* ========== left col ========== */}
         {/* ============================== */}
@@ -244,10 +244,23 @@ class Home extends Component {
             {topPlayersList}
           </div>
 
-          {/* advertiesmen */}
-          <div className="homeAdvertiesment">
-            <h4>Contact us for advertise here</h4>
+          <div>
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJontySlGaming%2F&tabs=timeline&width=340&height=700&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1661349964000177"
+              width="340"
+              height="700"
+              // style="border:none;overflow:hidden"
+              style={{border:"none",overflow:"hidden"}}
+              scrolling="no"
+              frameborder="0"
+              allowTransparency="true"
+              allow="encrypted-media"
+            ></iframe>
           </div>
+          {/* advertiesmen */}
+          {/* <div className="homeAdvertiesment">
+            <h4>Contact us for advertise here</h4>
+          </div> */}
         </div>
       </div>
     );

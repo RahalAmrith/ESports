@@ -1,0 +1,16 @@
+.forum_main {
+    background-color: #00000088;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    color: #ffffff;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .forum_main h1{
+      margin-bottom: 50px;
+      font-size: 50px;
+  }
+  

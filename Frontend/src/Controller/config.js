@@ -5,6 +5,7 @@ class Env {
   constructor() {
     // local server
     this.host = "http://176.223.134.186";
+    // this.host = "http://127.0.0.1";
     this.port = ":5500";
 
     // local APIs
