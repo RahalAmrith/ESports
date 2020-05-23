@@ -5,9 +5,11 @@
   overflow: hidden;
   transition-duration: 0.5s;
   border-radius: 8px;
+  overflow-x: scroll;
 }
 
 .MatchesContainer table {
+  min-width: 555px;
   color: #ffffff;
 }
 
@@ -30,7 +32,7 @@
   background-color: #00000088;
 }
 
-.MatchesContainer table th{
+.MatchesContainer table th {
   text-align: left;
 }
 
@@ -106,7 +108,7 @@
   opacity: 0.3;
 }
 
-.tableSpinner{
+.tableSpinner {
   width: 100% !important;
   height: 100px !important;
   border-radius: 0px !important;

@@ -2,8 +2,6 @@ class Game {
   constructor() {}
 
   getLogoByID(id) {
-    console.log("Game Id : " + id);
-    
     switch (id) {
       case 1:
         return "https://pandascore.co/assets/icons/lol-dfcf243283cfa3b9f251bb5566d5fc268a616ed78860cfb6ca47685826f62924.png";

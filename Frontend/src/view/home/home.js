@@ -108,35 +108,35 @@ class Home extends Component {
       infinite: true,
       speed: 500,
       slidesToShow:
-        this.state.recentPostList.length > 4
-          ? 4
+        this.state.recentPostList.length > 2
+          ? 2
           : this.state.recentPostList.length,
-      slidesToScroll: 4,
+      slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 768,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 1,
+            slidesToScroll: 1,
             infinite: true,
             dots: true,
           },
         },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
+        //   {
+        //     breakpoint: 600,
+        //     settings: {
+        //       slidesToShow: 2,
+        //       slidesToScroll: 2,
+        //       initialSlide: 2,
+        //     },
+        //   },
+        //   {
+        //     breakpoint: 480,
+        //     settings: {
+        //       slidesToShow: 1,
+        //       slidesToScroll: 1,
+        //     },
+        //   },
       ],
     };
 
@@ -250,10 +250,11 @@ class Home extends Component {
               width="340"
               height="700"
               // style="border:none;overflow:hidden"
-              style={{border:"none",overflow:"hidden"}}
+              style={{ border: "none", overflow: "hidden" }}
               scrolling="no"
-              frameborder="0"
-              allowTransparency="true"
+              frameBorder="0"
+              // allowTransparency="true"
+              allowTransparency={true}
               allow="encrypted-media"
             ></iframe>
           </div>
