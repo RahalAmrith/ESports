@@ -246,7 +246,7 @@ class Home extends Component {
 
           <div>
             <iframe
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJontySlGaming%2F&tabs=timeline&width=340&height=700&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1661349964000177"
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FWorld-E-sports-Earnings-113542470409078&tabs=timeline&width=340&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1661349964000177"
               width="340"
               height="700"
               // style="border:none;overflow:hidden"
